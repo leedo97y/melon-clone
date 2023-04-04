@@ -1,0 +1,16 @@
+//// footer
+
+footer {
+  width: 100%;
+  height: 150px;
+  padding-left: 50px;
+
+  display: flex;
+  align-items: center;
+  justify-items: flex-start;
+
+  position: absolute;
+  bottom: 0;
+
+  font-size: 15px;
+}

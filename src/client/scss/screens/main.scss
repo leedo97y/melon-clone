@@ -1,0 +1,107 @@
+//// main page
+
+#mainDiv {
+  width: 100%;
+  height: 700px;
+
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: row;
+  align-content: flex-start;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 50px;
+
+  background: $gradientBg;
+}
+
+// top tracks
+#topTracks {
+  width: 500px;
+  height: 700px;
+
+  box-sizing: border-box;
+
+  background-color: black;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+
+  margin-left: 100px;
+  margin-bottom: 20px;
+  padding: 30px;
+
+  #desc {
+    font-size: 20px;
+    margin-bottom: 30px;
+  }
+
+  overflow-y: scroll;
+
+  ::-webkit-scrollbar {
+    visibility: hidden;
+  }
+
+  :hover {
+    visibility: visible;
+  }
+
+  p:first-child {
+    font-size: 30px;
+    font-weight: 500;
+  }
+}
+
+// top track list
+#trackList {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  // li style
+  li {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: row;
+
+    padding: 10px;
+
+    #rank {
+      width: 20px;
+      height: 20px;
+      margin-top: 25px;
+      text-align: center;
+    }
+
+    img {
+      margin: 0 20px;
+    }
+
+    #textDiv {
+      display: flex;
+      flex-direction: column;
+
+      #title {
+        font-size: 20px;
+        font-weight: 500;
+
+        margin-bottom: 10px;
+      }
+    }
+  }
+}
+
+// pop list
+#popList {
+  width: 500px;
+  height: 700px;
+
+  box-sizing: border-box;
+
+  background-color: black;
+}

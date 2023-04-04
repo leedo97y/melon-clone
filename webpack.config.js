@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const path = require("path");
+const webpack = require("webpack");
 
 const BASE_JS = "./src/client/js/";
 
@@ -10,6 +11,9 @@ module.exports = {
   plugins: [
     new MiniCssExtractPlugin({
       filename: "css/styles.css",
+    }),
+    new webpack.EnvironmentPlugin({
+      API_KEY: "9ef77bf80f5f45115d9ad6df6c2de8ec",
     }),
   ],
   output: {
