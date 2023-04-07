@@ -5,7 +5,25 @@ block content
         div(id="topTracks")
             p Top Track 
             p(id="desc") This is Top 50 Track list !
-            ul(id="trackList") 
-        div(id="popList")
-            p POP Track List
+            div(id="trackListDiv")
+                ul(id="trackList") 
+        //- div(id="popList")
+        //-     p POP Track List
+        div(id="playlist")
+            h1 Playlist
+            div(id="playlistBody")
+                img(id="musicImg")
+                p(id="musicTitle") music title
+                p(id="musicArtist") artist
+                div(id="musicBtnDiv")
+                    img(id="prev" src="/static/images/prev.png" alt="prev")
+                    img(id="play" src="/static/images/play.png" alt="play")
+                    img(id="pause" src="/static/images/pause.png" alt="pause" class="hidden")
+                    img(id="next" src="/static/images/next.png" alt="next")
+                    img(id="mute" src="/static/images/mute.png" alt="mute")
+                    img(id="volume" src="/static/images/volume.png" alt="volume" class="hidden")
+                div(id="musiclistDiv")
+                    
+    script(src="/static/js/playlist.js") 
+    block scripts
 

@@ -7,6 +7,7 @@ const BASE_JS = "./src/client/js/";
 module.exports = {
   entry: {
     main: BASE_JS + "main.js",
+    playlist: BASE_JS + "playlist.js",
   },
   plugins: [
     new MiniCssExtractPlugin({
@@ -35,6 +36,20 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
+      },
+      {
+        test: /\.(gif|png|jpe?g|svg)$/,
+        loader: "file-loader",
+        options: {
+          name: "images/[name].[ext]",
+        },
+      },
+      {
+        test: /\.mp3$/,
+        loader: "file-loader",
+        options: {
+          name: "audios/[name].[ext]",
+        },
       },
     ],
   },

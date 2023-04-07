@@ -1,5 +1,3 @@
-//// main page
-
 #mainDiv {
   width: 100%;
   height: 700px;
@@ -9,21 +7,21 @@
   display: flex;
   flex-direction: row;
   align-content: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: flex-start;
-  gap: 50px;
+  gap: 80px;
 
   background: $gradientBg;
 }
 
-// top tracks
+//// top tracks
 #topTracks {
   width: 500px;
   height: 700px;
 
   box-sizing: border-box;
 
-  background-color: black;
+  background-color: $lightBg;
 
   display: flex;
   flex-direction: column;
@@ -40,14 +38,32 @@
     margin-bottom: 30px;
   }
 
-  overflow-y: scroll;
+  #trackListDiv {
+    width: 420px;
+    height: 500px;
 
-  ::-webkit-scrollbar {
-    visibility: hidden;
-  }
+    overflow: auto;
+    overflow-x: hidden;
+    overflow-y: hidden;
 
-  :hover {
-    visibility: visible;
+    &:hover {
+      overflow-y: visible;
+    }
+
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      margin-bottom: 20px;
+      margin-top: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 30px;
+    }
   }
 
   p:first-child {
@@ -56,7 +72,7 @@
   }
 }
 
-// top track list
+//// top track list
 #trackList {
   display: flex;
   flex-direction: column;
@@ -79,6 +95,8 @@
     }
 
     img {
+      width: 64px;
+      height: 64px;
       margin: 0 20px;
     }
 
@@ -96,12 +114,156 @@
   }
 }
 
-// pop list
+//// pop list
 #popList {
   width: 500px;
   height: 700px;
 
   box-sizing: border-box;
 
-  background-color: black;
+  background-color: $lightBg;
+}
+
+//// playlist
+
+#playlist {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+
+  box-sizing: border-box;
+
+  width: 500px;
+  height: 700px;
+  padding: 30px;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  color: $bg;
+
+  h1 {
+    font-size: 30px;
+    font-weight: 500;
+
+    margin-bottom: 20px;
+  }
+}
+
+#playlistBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+
+  box-sizing: border-box;
+
+  #musicImg {
+    width: 250px;
+    height: 250px;
+
+    background-color: $bg;
+  }
+
+  #musicTitle {
+    font-size: 25px;
+  }
+
+  #musicArtist {
+    font-size: 20px;
+    margin-top: -5px;
+  }
+}
+
+#musicBtnDiv {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 50px;
+
+  box-sizing: border-box;
+
+  img {
+    width: 30px;
+    height: 30px;
+
+    cursor: pointer;
+  }
+
+  #prev,
+  #next {
+    width: 35px;
+    height: 35px;
+  }
+
+  #mute {
+    width: 25px;
+    height: 25px;
+  }
+
+  .hidden {
+    display: none;
+  }
+}
+
+#musiclistDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: 10px;
+
+  box-sizing: border-box;
+
+  #musiclistUl {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    width: 400px;
+    height: 150px;
+
+    padding: 20px;
+
+    li {
+      margin-bottom: 20px;
+
+      cursor: pointer;
+    }
+
+    #songTitle {
+      font-size: 23px;
+      margin-bottom: 10px;
+    }
+
+    #songArtist {
+      font-size: 20px;
+    }
+
+    overflow: auto;
+    overflow-y: hidden;
+    overflow-y: hidden;
+
+    &:hover {
+      overflow-y: visible;
+      cursor: pointer;
+    }
+
+    &::-webkit-scrollbar {
+      width: 7px;
+    }
+
+    &::-webkit-scrollbar-track {
+      background-color: transparent;
+      margin-bottom: 20px;
+      margin-top: 7px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background-color: rgba(90, 90, 90, 0.5);
+      border-radius: 30px;
+    }
+  }
 }

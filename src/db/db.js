@@ -1,7 +1,6 @@
 import mongoose from "mongoose";
 import { dbTestHandler } from "./dbTestHandler";
 export * from "./models/userModel.js";
-export * from "./models/songModel.js";
 
 mongoose.connect(process.env.DB_URL, {
   useNewUrlParser: true,
