@@ -5,6 +5,7 @@ $lightRed: #be473f;
 $bg: #0e1117;
 $lightBg: #151a24;
 $whiteBg: rgba(255, 255, 255, 0.5);
+$formGradientBg: rgba(21, 26, 36, 0.45);
 $gradientBg: linear-gradient(
   180deg,
   rgba(184, 35, 24, 1) 10%,
@@ -12,3 +13,6 @@ $gradientBg: linear-gradient(
 );
 
 $blackScrollBar: rgba(90, 90, 90, 0.5);
+
+$darkBtn: #1f2736;
+$lightDarkBtn: #2f394f;

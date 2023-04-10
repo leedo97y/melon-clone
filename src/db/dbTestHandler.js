@@ -7,11 +7,9 @@ export const dbTestHandler = async (db) => {
   //   password: "12345",
   //   nickName: "Doy",
   // });
-
-  process.on("SIGINT", async () => {
-    await db.dropDatabase();
-
-    console.log("DB clear!");
-    process.exit();
-  });
+  // process.on("SIGINT", async () => {
+  //   await db.dropDatabase();
+  //   console.log("DB clear!");
+  //   process.exit();
+  // });
 };

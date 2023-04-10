@@ -1,15 +1,14 @@
 // Config
 @import "./config/_variables.scss";
 @import "./config/_reset.scss";
-@import "./components/header.scss";
-@import "./components/footer.scss";
-@import "./screens/main.scss";
 
 // Components
-// Example: @import "./components/message.scss";
+@import "./components/header.scss";
+@import "./components/footer.scss";
 
 // Screens
-// Example: @import "./screens/search.scss";
+@import "./screens/main.scss";
+@import "./screens/register.scss";
 
 //// Defaults
 a {

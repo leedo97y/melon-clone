@@ -24,13 +24,12 @@ import("../audios/Last Train Home.mp3");
 import("../audios/The Age of Worry.mp3");
 import("../audios/Free Fallin'.mp3");
 
-// js file
-// import "../js/playlist.js";
-
 const API_KEY = process.env.API_KEY;
-const TOP_ARTIST_API = `https://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=KOREA,%20REPUBLIC%20OF&api_key=${API_KEY}&format=json`;
-const TOP_SONG_API = `https://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=KOREA,%20REPUBLIC%20OF&api_key=${API_KEY}&format=json`;
+// const TOP_ARTIST_API = `https://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=KOREA,%20REPUBLIC%20OF&api_key=${API_KEY}&format=json`;
+// const TOP_SONG_API = `https://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=KOREA,%20REPUBLIC%20OF&api_key=${API_KEY}&format=json`;
 const CHART_API = `https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=${API_KEY}&format=json`;
+
+const trackList = document.querySelector("ul");
 
 const getDataForChart = async () => {
   await fetch(CHART_API)
@@ -42,7 +41,6 @@ const getDataForChart = async () => {
       let count = 0;
 
       trackDatas.forEach((data) => {
-        const trackList = document.querySelector("ul");
         const li = document.createElement("li");
         const rank = document.createElement("span");
         const img = document.createElement("img");
@@ -68,7 +66,7 @@ const getDataForChart = async () => {
         textDiv.appendChild(artist);
       });
     })
-    .catch((err) => console.log(err));
+    .catch((err) => console.error(err));
 };
 
 getDataForChart();
