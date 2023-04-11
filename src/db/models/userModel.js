@@ -1,7 +1,7 @@
-import mongoose from "mongoose";
-import { UserSchema } from "../schemas/userSchema.js";
+import { model } from "mongoose";
+import { UserSchema } from "../schemas/userSchema";
 
-const User = mongoose.model("User", UserSchema);
+const User = model("User", UserSchema);
 
 export class UserModel {
   async findByEmail(email) {
@@ -19,18 +19,8 @@ export class UserModel {
   async findAll() {
     return await User.find({});
   }
-
-  async update({ userId, update }) {
-    return await User.findOneAndUpdate({ _id: userId }, update, {
-      returnOriginal: false,
-    });
-  }
-
-  async deleteUser(userId) {
-    return await User.findByIdAndDelete(userId);
-  }
 }
 
-const userModel = new User();
+const userModel = new UserModel();
 
 export { userModel };

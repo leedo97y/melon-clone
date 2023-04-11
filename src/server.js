@@ -30,8 +30,7 @@ app.use("/uploads", express.static("uploads"));
 app.use("/static", express.static("assets"));
 
 app.use("/", rootRouter);
-app.use("/register", rootRouter);
-app.use("/api", userRouter);
+app.use("/apis", userRouter);
 /*
 Add more routers here!
 */

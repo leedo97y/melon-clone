@@ -1,0 +1,17 @@
+extends base
+
+block content
+  div(id="loginDiv")
+    div(id="loginFormDiv")
+      h1 Login
+      form(id="loginForm")
+        label(for="email") Email
+        input(id="email" type="email" autocomplete="off" require name="email" placeholder="Write your email.")
+        label(for="password") Password 
+        input(id="password" type="password" autocomplete="off" require name="password"  placeholder="4 ~ 8 digit will be needed.")
+        div(id="loginBtnDiv")
+          input(id="loginBtn" type="button" value="Login") 
+
+
+  script(src="/static/js/login.js") 
+  block scripts

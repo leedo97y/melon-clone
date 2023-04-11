@@ -11,7 +11,31 @@ module.exports = {
     register: BASE_JS + "register.js",
     login: BASE_JS + "login.js",
     api: BASE_JS + "api.js",
+    loginData: BASE_JS + "loginData.js",
   },
+  // devServer: {
+  //   before: (app, server, compiler) => {
+  //     app.get("/api/datas", (req, res) => {
+  //       res.json([
+  //         {
+  //           email: "doylee@gmail.com",
+  //           password: "12341234",
+  //           nickname: "doy",
+  //         },
+  //         {
+  //           email: "cobalt33@gmail.com",
+  //           password: "11223344",
+  //           nickname: "cobalt",
+  //         },
+  //         {
+  //           email: "test11@gmail.com",
+  //           password: "11111111",
+  //           nickname: "test11",
+  //         },
+  //       ]);
+  //     });
+  //   },
+  // },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "css/styles.css",
