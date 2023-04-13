@@ -21,7 +21,7 @@ const onSubmitForm = async (e) => {
   };
 
   const nicknameValidationCheck = (nickname) => {
-    return nickname.length >= 2;
+    return String(nickname).length >= 2;
   };
 
   const emailValid = emailValidationCheck(email);

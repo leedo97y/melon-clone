@@ -1,6 +1,5 @@
 import { userModel } from "../db/models/userModel";
-// import { BadRequestError } from "../../utils/reqError";
-import bcrypt from "bcrypt";
+// import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
 class AppError extends Error {
@@ -13,11 +12,6 @@ class AppError extends Error {
 class BadRequestError extends AppError {
   constructor(message) {
     super(400, message);
-  }
-}
-class UnauthorizedError extends AppError {
-  constructor(message) {
-    super(401, message);
   }
 }
 
@@ -38,10 +32,9 @@ class UserService {
       );
     }
 
-    const hashedPassword = await bcrypt.hash(password, 8);
     const newUserInfo = {
       email,
-      password: hashedPassword,
+      password,
       nickname,
     };
 
@@ -60,13 +53,9 @@ class UserService {
       );
     }
 
-    const correctPasswordHash = user.password;
-    const isPasswordCorrect = await bcrypt.compare(
-      password,
-      correctPasswordHash
-    );
+    const correctPassword = user.password;
 
-    if (!isPasswordCorrect) {
+    if (password !== correctPassword) {
       alert("비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요.");
       throw new BadRequestError(
         "비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요."
@@ -74,7 +63,7 @@ class UserService {
     }
 
     const secretKey = process.env.JWT_SECRET_KEY || "secret-key";
-    const token = jwt.sign({ userId: user._id }, secretKey);
+    const token = jwt.sign({ userId: user._id, role: user.role }, secretKey);
 
     return { token };
   }
@@ -88,7 +77,7 @@ class UserService {
   }
 
   async setUser(userInfoRequired, toUpdate) {
-    const { userId, currentPassword } = userInfoRequired;
+    const { userId, currentPassword, nickname } = userInfoRequired;
 
     let user = await this.userModel.findById(userId);
 
@@ -99,13 +88,9 @@ class UserService {
       );
     }
 
-    const correctPasswordHash = user.password;
-    const isPasswordCorrect = await bcrypt.compare(
-      currentPassword,
-      correctPasswordHash
-    );
+    const correctPassword = user.password;
 
-    if (!isPasswordCorrect) {
+    if (password !== correctPassword) {
       alert("현재 비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요.");
       throw new BadRequestError(
         "현재 비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요."
@@ -115,8 +100,7 @@ class UserService {
     const { password } = toUpdate;
 
     if (password) {
-      const newPasswordHash = await bcrypt.hash(password, 10);
-      toUpdate.password = newPasswordHash;
+      toUpdate.password = password;
     }
 
     return await this.userModel.update({ userId, update: toUpdate });

@@ -1,42 +1,45 @@
-import { loginData } from "./loginData";
+import * as Api from "./api.js";
 import { async } from "regenerator-runtime";
 
-const emailInput = document.querySelector("#email");
-const passwordInput = document.querySelector("#password");
+const loginEmailInput = document.querySelector("#loginEmail");
+const loginPasswordInput = document.querySelector("#loginPassword");
 const loginBtn = document.querySelector("#loginBtn");
 
-const onLoginClick = (e) => {
+const onLoginClick = async (e) => {
   e.preventDefault();
 
-  const email = emailInput.value;
-  const password = passwordInput.value;
+  const loginEmail = loginEmailInput.value;
+  const loginPassword = loginPasswordInput.value;
 
-  // const emailValidationCheck = (email) => {
-  //   return String(email)
-  //     .toLowerCase()
-  //     .match(/^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/);
-  // };
+  const emailValidationCheck = (loginEmail) => {
+    return String(loginEmail)
+      .toLowerCase()
+      .match(/^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/);
+  };
 
-  // const emailValid = emailValidationCheck(email);
+  const emailValid = emailValidationCheck(loginEmail);
+  const passwordValid = loginPassword.length >= 4;
 
-  // if (!emailValid) {
-  //   return alert("이메일 형식을 확인해주세요.");
-  // }
+  if (!emailValid || !passwordValid) {
+    return alert("이메일 형식이나 비밀번호를 확인해주세요.");
+  }
 
-  // loginData.forEach((data) => {
-  //   if (String(email) === data.email && String(password) === data.password) {
-  //     return localStorage.setItem("nickname", data.nickname);
-  //   } else {
-  //     alert("이메일이나 비밀번호를 확인해주세요.");
-  //   }
-  // });
+  try {
+    const loginData = {
+      loginEmail,
+      loginPassword,
+    };
 
-  window.location.href = "http://localhost:4000";
+    const result = await Api.post("/apis/login", loginData);
+    const token = result.token;
+
+    sessionStorage.setItem("token", token);
+
+    alert("로그인이 완료되었습니다.");
+    window.location.href = "/";
+  } catch (err) {
+    console.error(err);
+  }
 };
-
-// document.addEventListener("DOMContentLoaded", async () => {
-//   const res = await fetch("/api/datas");
-//   console.log(res);
-// });
 
 loginBtn.addEventListener("click", onLoginClick);

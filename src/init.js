@@ -1,7 +1,7 @@
 import "regenerator-runtime";
 import "dotenv/config";
-// import "./db/db";
-// import "./db/dbTestHandler";
+import "./db";
+import "./dbTestHandler";
 import app from "./server";
 
 const PORT = process.env.PORT || 4000;

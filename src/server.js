@@ -22,6 +22,7 @@ app.use(
     resave: false,
     saveUninitialized: false,
     store: MongoStore.create({ mongoUrl: process.env.DB_URL }),
+    cookie: { maxAge: 3.6e6 * 72 }, // 72시간 유효
   })
 );
 app.use(flash());
@@ -29,7 +30,7 @@ app.use(localsMiddleware);
 app.use("/uploads", express.static("uploads"));
 app.use("/static", express.static("assets"));
 
-app.use("/", rootRouter);
+app.use(rootRouter);
 app.use("/apis", userRouter);
 /*
 Add more routers here!

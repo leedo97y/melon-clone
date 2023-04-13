@@ -7,41 +7,20 @@ const BASE_JS = "./src/client/js/";
 module.exports = {
   entry: {
     main: BASE_JS + "main.js",
+    header: BASE_JS + "header.js",
     playlist: BASE_JS + "playlist.js",
     register: BASE_JS + "register.js",
     login: BASE_JS + "login.js",
+    myplaylist: BASE_JS + "myplaylist.js",
     api: BASE_JS + "api.js",
-    loginData: BASE_JS + "loginData.js",
   },
-  // devServer: {
-  //   before: (app, server, compiler) => {
-  //     app.get("/api/datas", (req, res) => {
-  //       res.json([
-  //         {
-  //           email: "doylee@gmail.com",
-  //           password: "12341234",
-  //           nickname: "doy",
-  //         },
-  //         {
-  //           email: "cobalt33@gmail.com",
-  //           password: "11223344",
-  //           nickname: "cobalt",
-  //         },
-  //         {
-  //           email: "test11@gmail.com",
-  //           password: "11111111",
-  //           nickname: "test11",
-  //         },
-  //       ]);
-  //     });
-  //   },
-  // },
   plugins: [
     new MiniCssExtractPlugin({
       filename: "css/styles.css",
     }),
     new webpack.EnvironmentPlugin({
       API_KEY: "9ef77bf80f5f45115d9ad6df6c2de8ec",
+      JWT_SECRET_KEY: "tomato",
     }),
   ],
   output: {
@@ -53,10 +32,12 @@ module.exports = {
     rules: [
       {
         test: /\.js$/,
+        exclude: /node_modules/,
         use: {
           loader: "babel-loader",
           options: {
             presets: [["@babel/preset-env", { targets: "defaults" }]],
+            plugins: ["@babel/plugin-transform-runtime"],
           },
         },
       },

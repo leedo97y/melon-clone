@@ -4,7 +4,11 @@ export const UserSchema = new Schema(
   {
     email: String,
     password: String,
-    nickName: String,
+    nickname: String,
+    role: {
+      type: String,
+      default: "basic-user",
+    },
   },
   {
     timestamps: true,

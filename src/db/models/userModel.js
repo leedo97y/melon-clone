@@ -19,6 +19,16 @@ export class UserModel {
   async findAll() {
     return await User.find({});
   }
+
+  async update({ userId, update }) {
+    return await User.findOneAndUpdate({ _id: userId }, update, {
+      returnOriginal: false,
+    });
+  }
+
+  async deleteUser(userId) {
+    return await User.findByIdAndDelete(userId);
+  }
 }
 
 const userModel = new UserModel();
