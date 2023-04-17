@@ -22,9 +22,9 @@ export const dbTestHandler = async (db) => {
     nickname: "camelCase",
     role: "basic-user",
   });
-  process.on("SIGINT", async () => {
-    await db.dropDatabase();
-    console.log("DB clear!");
-    process.exit();
-  });
+  // process.on("SIGINT", async () => {
+  //   await db.dropDatabase();
+  //   console.log("DB clear!");
+  //   process.exit();
+  // });
 };

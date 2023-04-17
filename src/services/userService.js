@@ -45,6 +45,7 @@ class UserService {
     const { email, password } = loginInfo;
 
     const user = await this.userModel.findByEmail(email);
+    console.log(user);
 
     if (!user) {
       alert("해당 이메일은 가입 내역이 없습니다. 다시 한 번 확인해 주세요.");
@@ -64,6 +65,7 @@ class UserService {
 
     const secretKey = process.env.JWT_SECRET_KEY || "secret-key";
     const token = jwt.sign({ userId: user._id, role: user.role }, secretKey);
+    console.log(token);
 
     return { token };
   }

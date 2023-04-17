@@ -30,12 +30,13 @@ const onLoginClick = async (e) => {
       loginPassword,
     };
 
-    const result = await Api.post("/apis/login", loginData);
-    const token = result.token;
+    const res = await Api.post("/apis/login", loginData);
+    const token = res.token;
 
     sessionStorage.setItem("token", token);
 
     alert("로그인이 완료되었습니다.");
+
     window.location.href = "/";
   } catch (err) {
     console.error(err);
