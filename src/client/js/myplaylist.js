@@ -10,16 +10,22 @@ const albumData = [
     source: "/static/audios/Edge of Desire-John Mayer.mp3",
   },
   {
+    title: "Golden Hour",
+    artist: "JVKE",
+    image: "/static/images/jvke1.jpeg",
+    source: "/static/audios/Golden Hour.mp3",
+  },
+  {
     title: "Gravity",
     artist: "John Mayer",
     image: "/static/images/John-Mayer.jpg",
     source: "/static/audios/Gravity-John Mayer.mp3",
   },
   {
-    title: "In Your Atmospher",
-    artist: "John Mayer",
-    image: "/static/images/John-Mayer-4.jpeg",
-    source: "/static/audios/In Your Atmosphere-John Mayer.mp3",
+    title: "One Call Away",
+    artist: "Charlie Puth",
+    image: "/static/images/charlie puth.png",
+    source: "/static/audios/One Call Away.mp3",
   },
   {
     title: "Free Fallin' ",
@@ -28,16 +34,61 @@ const albumData = [
     source: "/static/audios/Free Fallin'.mp3",
   },
   {
-    title: "Last Train Home",
-    artist: "John Mayer",
-    image: "/static/images/John-Mayer-3.jpeg",
-    source: "/static/audios/Last Train Home.mp3",
-  },
-  {
     title: "The Age of Worry",
     artist: "John Mayer",
     image: "/static/images/John-Mayer-2.jpg",
     source: "/static/audios/The Age of Worry.mp3",
+  },
+];
+
+const wholePlaylistData = [
+  {
+    title: "I AM",
+    artist: "IVE",
+    image: "/static/images/ive.jpg",
+    source: "/static/audios/I AM.mp3",
+  },
+  {
+    title: "After Like",
+    artist: "IVE",
+    image: "/static/images/ive1.png",
+    source: "/static/audios/After LIKE.mp3",
+  },
+  {
+    title: "Kitsch",
+    artist: "IVE",
+    image: "/static/images/ive2.png",
+    source: "/static/audios/Kitsch.mp3",
+  },
+  {
+    title: "Blue Blood",
+    artist: "IVE",
+    image: "/static/images/ive.jpg",
+    source: "/static/audios/Blue Blood.mp3",
+  },
+  {
+    title: "Golden Hour",
+    artist: "JVKE",
+    image: "/static/images/jvke1.jpeg",
+    source: "/static/audios/Golden Hour.mp3",
+  },
+  {
+    title: "Upside Down (feat. Charlie Puth)",
+    artist: "JVKE",
+    image: "/static/images/jvke.jpeg",
+    source: "/static/audios/Upside Down (feat. Charlie Puth).mp3",
+  },
+  {
+    title: "One Call Away",
+    artist: "Charlie Puth",
+    image: "/static/images/charlie puth.png",
+    source: "/static/audios/One Call Away.mp3",
+  },
+  {
+    title: "Light Switch",
+    artist: "Charlie Puth",
+    image: "/static/images/charlie puth1.jpeg",
+    source: "/static/audios/Light Switch.mp3",
   },
 ];
 
@@ -107,7 +158,6 @@ const loadMusic = () => {
   musicImg.src = albumData[musicIndex].image;
 };
 
-const playlist = document.querySelector("#musiclistDiv");
 const prev = document.querySelector("#prev");
 const play = document.querySelector("#play");
 const pause = document.querySelector("#pause");
@@ -118,6 +168,51 @@ const volume = document.querySelector("#volume");
 const hidden = "hidden";
 
 const showPlaylist = () => {
+  wholePlaylistData.forEach((music) => {
+    const playlistol = document.getElementById("playlistol");
+    const wholeMusiclistol = document.getElementById("wholeMusiclistol");
+    const li = document.createElement("li");
+    const p = document.createElement("p");
+    const span = document.createElement("span");
+
+    // each song title and artist
+
+    p.id = "musicPlayTitle";
+    p.innerHTML = music.title;
+    span.id = "musicPlayArtist";
+    span.innerHTML = music.artist;
+
+    li.append(p);
+    li.append(span);
+    wholeMusiclistol.append(li);
+
+    const playMusic = () => {
+      audio.src = music.source;
+      title.innerHTML = music.title;
+      artist.innerHTML = music.artist;
+      musicImg.src = music.image;
+
+      play.classList.add(hidden);
+      pause.classList.remove(hidden);
+
+      // li를 추가해준다. + id도 추가해준다.
+      playlistol.appendChild(li);
+      li.id = "musicli";
+
+      audio.play();
+    };
+
+    const pauseMusic = () => {
+      play.classList.remove(hidden);
+      pause.classList.add(hidden);
+
+      audio.pause();
+    };
+
+    li.addEventListener("click", playMusic);
+    pause.addEventListener("click", pauseMusic);
+  });
+
   albumData.forEach((song) => {
     const playlistol = document.getElementById("playlistol");
     const li = document.createElement("li");
@@ -156,8 +251,6 @@ const showPlaylist = () => {
     li.addEventListener("click", playMusic);
     pause.addEventListener("click", pauseMusic);
   });
-
-  playlist.append(ul);
 };
 
 const onPlay = () => {

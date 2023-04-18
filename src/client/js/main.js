@@ -13,16 +13,28 @@ import "../images/next.png";
 import("../images/redLP.jpeg");
 import("../images/John-Mayer.jpg");
 import("../images/John-Mayer-2.jpg");
-import("../images/John-Mayer-3.jpeg");
 import("../images/John-Mayer-4.jpeg");
+import("../images/jvke.jpeg");
+import("../images/jvke1.jpeg");
+import("../images/ive.jpg");
+import("../images/ive1.png");
+import("../images/ive2.png");
+import("../images/charlie puth.png");
+import("../images/charlie puth1.jpeg");
 
 // audios
 import("../audios/Edge of Desire-John Mayer.mp3");
 import("../audios/Gravity-John Mayer.mp3");
-import("../audios/In Your Atmosphere-John Mayer.mp3");
-import("../audios/Last Train Home.mp3");
 import("../audios/The Age of Worry.mp3");
 import("../audios/Free Fallin'.mp3");
+import("../audios/I AM.mp3");
+import("../audios/Kitsch.mp3");
+import("../audios/After LIKE.mp3");
+import("../audios/Blue Blood.mp3");
+import("../audios/Light Switch.mp3");
+import("../audios/One Call Away.mp3");
+import("../audios/Golden Hour.mp3");
+import("../audios/Upside Down (feat. Charlie Puth).mp3");
 
 const API_KEY = process.env.API_KEY;
 // const TOP_ARTIST_API = `https://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=KOREA,%20REPUBLIC%20OF&api_key=${API_KEY}&format=json`;

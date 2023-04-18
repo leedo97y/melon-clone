@@ -180,6 +180,21 @@
         cursor: pointer;
       }
 
+      #musicli {
+        margin-bottom: 20px;
+
+        cursor: pointer;
+
+        #musicPlayTitle {
+          font-size: 23px;
+          margin-bottom: 10px;
+        }
+
+        #musicPlayArtist {
+          font-size: 20px;
+        }
+      }
+
       #songTitle {
         font-size: 23px;
         margin-bottom: 10px;
@@ -226,6 +241,74 @@
       border-bottom: 1px solid #fff;
       padding-bottom: 10px;
       margin-bottom: 10px;
+    }
+
+    #wholeMusiclistol {
+      display: flex;
+      flex-direction: column;
+
+      box-sizing: border-box;
+
+      width: 700px;
+      height: 230px;
+
+      padding: 20px;
+      padding-left: 0;
+      margin-bottom: 20px;
+
+      li {
+        margin-bottom: 20px;
+
+        cursor: pointer;
+      }
+
+      #musicli {
+        margin-bottom: 20px;
+
+        cursor: pointer;
+
+        #musicPlayTitle {
+          font-size: 23px;
+          margin-bottom: 10px;
+        }
+
+        #musicPlayArtist {
+          font-size: 20px;
+        }
+      }
+
+      #musicPlayTitle {
+        font-size: 23px;
+        margin-bottom: 10px;
+      }
+
+      #musicPlayArtist {
+        font-size: 20px;
+      }
+
+      overflow: auto;
+      overflow-y: hidden;
+      overflow-y: hidden;
+
+      &:hover {
+        overflow-y: visible;
+        cursor: pointer;
+      }
+
+      &::-webkit-scrollbar {
+        width: 7px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+        margin-bottom: 20px;
+        margin-top: 7px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $blackScrollBar;
+        border-radius: 30px;
+      }
     }
   }
 }
