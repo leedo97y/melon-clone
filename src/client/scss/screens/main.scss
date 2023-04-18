@@ -16,7 +16,7 @@
 }
 
 //// top tracks
-#topTracks {
+#top {
   width: 500px;
   height: 700px;
 
@@ -35,8 +35,22 @@
   padding: 30px;
 
   #desc {
-    font-size: 20px;
+    font-size: 17px;
+    margin-top: 10px;
+    letter-spacing: 0.8px;
+  }
+
+  #descSecond {
+    font-size: 17px;
+    margin-top: -10px;
+    letter-spacing: 0.8px;
+  }
+
+  #descLast {
+    font-size: 17px;
+    margin-top: -10px;
     margin-bottom: 30px;
+    letter-spacing: 0.8px;
   }
 
   #trackListDiv {
@@ -115,15 +129,15 @@
   }
 }
 
-//// pop list
-#popList {
-  width: 500px;
-  height: 700px;
+// //// pop list
+// #popList {
+//   width: 500px;
+//   height: 700px;
 
-  box-sizing: border-box;
+//   box-sizing: border-box;
 
-  background-color: $lightBg;
-}
+//   background-color: $lightBg;
+// }
 
 //// playlist
 
@@ -143,12 +157,7 @@
   background-color: $whiteBg;
   color: $bg;
 
-  h1 {
-    font-size: 30px;
-    font-weight: 500;
-
-    margin-bottom: 20px;
-  }
+  padding-top: 40px;
 }
 
 #playlistBody {
@@ -174,6 +183,42 @@
   #musicArtist {
     font-size: 20px;
     margin-top: -5px;
+  }
+
+  #slider {
+    width: 330px;
+    height: 6px;
+    background: #151518;
+    border-radius: 10px;
+    div {
+      width: 2px;
+      height: 6px;
+
+      background: $red;
+      border-radius: 10px;
+    }
+  }
+  #timeDiv {
+    display: flex;
+
+    #starttime {
+      width: 50px;
+      height: 15px;
+      color: #494b4e;
+      line-height: 0;
+      font-size: 11pt;
+      margin-top: -7px;
+      margin-left: 20px;
+    }
+    #endtime {
+      width: 50px;
+      height: 15px;
+      color: #494b4e;
+      line-height: 0;
+      font-size: 11pt;
+      margin-top: -7px;
+      margin-left: 247px;
+    }
   }
 }
 

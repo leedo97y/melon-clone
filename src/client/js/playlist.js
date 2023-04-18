@@ -43,6 +43,64 @@ const musicData = [
 
 const audio = new Audio(musicData);
 
+audio.preload = "auto";
+audio.loop = "false";
+
+const playtime = document.getElementById("elapsed");
+const timeline = document.getElementById("slider");
+const starttime = document.getElementById("starttime");
+const endtime = document.getElementById("endtime");
+let duration;
+
+starttime.innerHTML = "0:00";
+endtime.innerHTML = "-:--";
+
+// starttime 부분에 명시해야할 것 = 총 길이
+
+// timelineWidth 는 timeline - playtime이며, 재생시간 말고 남은 길이를 뜻함.
+let timelineWidth = timeline.offsetWidth - playtime.offsetWidth;
+
+function timeUpdate() {
+  starttime.innerHTML = "0:00";
+  endtime.innerHTML = "0:00";
+
+  let durationTime = Math.floor(duration);
+  let seconds = Math.floor(audio.currentTime);
+  let playPercent = timelineWidth * (seconds / durationTime);
+  playtime.style.width = playPercent + "px";
+
+  // 시작시간이 늘어나게 만들 예정
+
+  if (durationTime <= 9) {
+    endtime.innerHTML = `0:0${durationTime}`;
+  } else if (durationTime >= 10 && durationTime <= 59) {
+    endtime.innerHTML = `0:${durationTime}`;
+  } else if (durationTime >= 60) {
+    let endtimeMin = Math.floor(durationTime / 60);
+    let endtimeSec = durationTime - 60 * endtimeMin;
+    if (endtimeSec <= 9) {
+      endtime.innerHTML = `${endtimeMin}:0${endtimeSec}`;
+    } else {
+      endtime.innerHTML = `${endtimeMin}:${endtimeSec}`;
+    }
+  }
+
+  // 시간표현 부분 하면 됨.
+  if (seconds <= 9) {
+    starttime.innerHTML = `0:0${seconds}`;
+  } else if (seconds >= 10 && seconds <= 59) {
+    starttime.innerHTML = `0:${seconds}`;
+  } else if (seconds >= 60) {
+    let min = Math.floor(seconds / 60);
+    let sec = seconds - 60 * min;
+    sec <= 9
+      ? (starttime.innerHTML = `${min}:0${sec}`)
+      : (starttime.innerHTML = `${min}:${sec}`);
+  }
+}
+
+audio.addEventListener("timeupdate", timeUpdate, false);
+
 // const musicIndex = 0;
 let musicIndex = 0;
 
@@ -109,6 +167,16 @@ const showPlaylist = () => {
 };
 
 const onPlay = () => {
+  if (audio.ended) {
+    musicIndex++;
+
+    if (musicIndex > musicData.length - 1) {
+      musicIndex = 0;
+    }
+    loadMusic(musicData[musicIndex]);
+    onPlay();
+  }
+
   play.classList.add(hidden);
   pause.classList.remove(hidden);
 
@@ -157,6 +225,14 @@ const onVolume = () => {
 
   audio.volume = 1;
 };
+
+audio.addEventListener(
+  "canplaythrough",
+  function () {
+    duration = audio.duration;
+  },
+  false
+);
 
 window.addEventListener("load", loadMusic);
 play.addEventListener("click", onPlay);

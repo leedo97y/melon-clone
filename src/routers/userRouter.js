@@ -29,6 +29,75 @@ function wrapAsync(func) {
   };
 }
 
+userRouter.post(
+  "/register",
+  body("email")
+    .isEmail()
+    .normalizeEmail()
+    .withMessage(
+      "올바른 이메일을 입력해주세요, 또한 대문자는 이메일에 포함할 수 없습니다."
+    ),
+  body("password")
+    .isAlphanumeric()
+    .isLength({ min: 4 })
+    .trim()
+    .withMessage("패스워드는 최소 4자리 이상이어야 합니다."),
+  // body("nickname")
+  //   .isString()
+  //   .isLength({ min: 2 })
+  //   .trim()
+  //   .withMessage("성함은 최소 2자리 이상이어야 합니다."),
+
+  wrapAsync(async (req, res) => {
+    const errors = validationResult(req);
+
+    if (!errors.isEmpty()) {
+      throw new BadRequestError(
+        errors
+          .array()
+          .map((error) => error.msg)
+          .join(", ")
+      );
+    }
+
+    const userToken = await userService.getUserToken(req.body);
+
+    res.status(201).json(userToken);
+  })
+);
+
+// userRouter.post(
+//   "/login",
+//   body("email")
+//     .isEmail()
+//     .normalizeEmail()
+//     .withMessage(
+//       "올바른 이메일을 입력해주세요, 또한 대문자는 이메일에 포함할 수 없습니다."
+//     ),
+//   body("password")
+//     .isAlphanumeric()
+//     .isLength({ min: 4 })
+//     .trim()
+//     .withMessage("패스워드는 최소 4자리 이상이어야 합니다."),
+
+//   wrapAsync(async (req, res) => {
+//     const errors = validationResult(req);
+
+//     if (!errors.isEmpty()) {
+//       throw new BadRequestError(
+//         errors
+//           .array()
+//           .map((error) => error.msg)
+//           .join(", ")
+//       );
+//     }
+//     console.log(req.body);
+//     const userToken = await userService.getUserToken(req.body);
+
+//     res.status(200).json(userToken);
+//   })
+// );
+
 // function loginRequired(req, res, next) {
 //   const userToken = req.headers["authorization"]?.split(" ")[1];
 
@@ -48,75 +117,6 @@ function wrapAsync(func) {
 //     return next(new UnauthorizedError("정상적인 토큰이 아닙니다."));
 //   }
 // }
-
-userRouter.post(
-  "/register",
-  body("email")
-    .isEmail()
-    .normalizeEmail()
-    .withMessage(
-      "올바른 이메일을 입력해주세요, 또한 대문자는 이메일에 포함할 수 없습니다."
-    ),
-  body("password")
-    .isAlphanumeric()
-    .isLength({ min: 4 })
-    .trim()
-    .withMessage("패스워드는 최소 4자리 이상이어야 합니다."),
-  body("nickname")
-    .isString()
-    .isLength({ min: 2 })
-    .trim()
-    .withMessage("성함은 최소 2자리 이상이어야 합니다."),
-
-  wrapAsync(async (req, res) => {
-    const errors = validationResult(req);
-
-    if (!errors.isEmpty()) {
-      throw new BadRequestError(
-        errors
-          .array()
-          .map((error) => error.msg)
-          .join(", ")
-      );
-    }
-
-    const newUser = await userService.addUser(req.body);
-
-    res.status(201).json(newUser);
-  })
-);
-
-userRouter.post(
-  "/login",
-  body("email")
-    .isEmail()
-    .normalizeEmail()
-    .withMessage(
-      "올바른 이메일을 입력해주세요, 또한 대문자는 이메일에 포함할 수 없습니다."
-    ),
-  body("password")
-    .isAlphanumeric()
-    .isLength({ min: 4 })
-    .trim()
-    .withMessage("패스워드는 최소 4자리 이상이어야 합니다."),
-
-  wrapAsync(async (req, res) => {
-    const errors = validationResult(req);
-
-    if (!errors.isEmpty()) {
-      throw new BadRequestError(
-        errors
-          .array()
-          .map((error) => error.msg)
-          .join(", ")
-      );
-    }
-    console.log(req.body);
-    const userToken = await userService.getUserToken(req.body);
-
-    res.status(200).json(userToken);
-  })
-);
 
 // userRouter.get(
 //   "/users/userInfo",

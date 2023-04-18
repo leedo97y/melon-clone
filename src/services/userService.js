@@ -20,26 +20,26 @@ class UserService {
     this.userModel = userModel;
   }
 
-  async addUser(userInfo) {
-    const { email, password, nickname } = userInfo;
+  // async addUser(userInfo) {
+  //   const { email, password, nickname } = userInfo;
 
-    const user = await this.userModel.findByEmail(email);
+  //   const user = await this.userModel.findByEmail(email);
 
-    if (user) {
-      alert("이 이메일은 현재 사용중입니다. 다른 이메일을 입력해 주세요.");
-      throw new BadRequestError(
-        "이 이메일은 현재 사용중입니다. 다른 이메일을 입력해 주세요."
-      );
-    }
+  //   if (user) {
+  //     alert("이 이메일은 현재 사용중입니다. 다른 이메일을 입력해 주세요.");
+  //     throw new BadRequestError(
+  //       "이 이메일은 현재 사용중입니다. 다른 이메일을 입력해 주세요."
+  //     );
+  //   }
 
-    const newUserInfo = {
-      email,
-      password,
-      nickname,
-    };
+  //   const newUserInfo = {
+  //     email,
+  //     password,
+  //     nickname,
+  //   };
 
-    return await this.userModel.create(newUserInfo);
-  }
+  //   return await this.userModel.create(newUserInfo);
+  // }
 
   async getUserToken(loginInfo) {
     const { email, password } = loginInfo;
@@ -70,56 +70,56 @@ class UserService {
     return { token };
   }
 
-  async getUserInfo(userId) {
-    return await this.userModel.findById(userId);
-  }
+  // async getUserInfo(userId) {
+  //   return await this.userModel.findById(userId);
+  // }
 
-  async getUsers() {
-    return await this.userModel.findAll();
-  }
+  // async getUsers() {
+  //   return await this.userModel.findAll();
+  // }
 
-  async setUser(userInfoRequired, toUpdate) {
-    const { userId, currentPassword, nickname } = userInfoRequired;
+  // async setUser(userInfoRequired, toUpdate) {
+  //   const { userId, currentPassword, nickname } = userInfoRequired;
 
-    let user = await this.userModel.findById(userId);
+  //   let user = await this.userModel.findById(userId);
 
-    if (!user) {
-      alert("가입 내역이 없습니다. 다시 한 번 확인해 주세요.");
-      throw new BadRequestError(
-        "가입 내역이 없습니다. 다시 한 번 확인해 주세요."
-      );
-    }
+  //   if (!user) {
+  //     alert("가입 내역이 없습니다. 다시 한 번 확인해 주세요.");
+  //     throw new BadRequestError(
+  //       "가입 내역이 없습니다. 다시 한 번 확인해 주세요."
+  //     );
+  //   }
 
-    const correctPassword = user.password;
+  //   const correctPassword = user.password;
 
-    if (password !== correctPassword) {
-      alert("현재 비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요.");
-      throw new BadRequestError(
-        "현재 비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요."
-      );
-    }
+  //   if (password !== correctPassword) {
+  //     alert("현재 비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요.");
+  //     throw new BadRequestError(
+  //       "현재 비밀번호가 일치하지 않습니다. 다시 한 번 확인해 주세요."
+  //     );
+  //   }
 
-    const { password } = toUpdate;
+  //   const { password } = toUpdate;
 
-    if (password) {
-      toUpdate.password = password;
-    }
+  //   if (password) {
+  //     toUpdate.password = password;
+  //   }
 
-    return await this.userModel.update({ userId, update: toUpdate });
-  }
+  //   return await this.userModel.update({ userId, update: toUpdate });
+  // }
 
-  async withdraw(userId) {
-    const user = await userModel.findById(userId);
+  // async withdraw(userId) {
+  //   const user = await userModel.findById(userId);
 
-    if (!user) {
-      alert("가입 내역이 없습니다. 다시 한 번 확인해 주세요.");
-      throw new BadRequestError(
-        "가입 내역이 없습니다. 다시 한 번 확인해 주세요."
-      );
-    }
+  //   if (!user) {
+  //     alert("가입 내역이 없습니다. 다시 한 번 확인해 주세요.");
+  //     throw new BadRequestError(
+  //       "가입 내역이 없습니다. 다시 한 번 확인해 주세요."
+  //     );
+  //   }
 
-    return await this.userModel.deleteUser(userId);
-  }
+  //   return await this.userModel.deleteUser(userId);
+  // }
 }
 
 const userService = new UserService(userModel);

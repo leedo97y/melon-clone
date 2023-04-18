@@ -14,3 +14,218 @@
 
   background: $gradientBg;
 }
+
+#wholeDiv {
+  width: 90%;
+  height: 100%;
+
+  display: flex;
+}
+
+// 뮤직 플레이어 부분
+#playerControlDiv {
+  width: 40%;
+  height: 100%;
+  background-color: $lightRed;
+  color: $bg;
+
+  padding: 30px;
+  padding-top: 40px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+
+  box-sizing: border-box;
+
+  #albumImg {
+    width: 400px;
+    height: 400px;
+
+    background-color: $bg;
+  }
+
+  #albumTitle {
+    font-size: 25px;
+  }
+
+  #albumArtist {
+    font-size: 20px;
+    margin-top: -5px;
+  }
+
+  #myslider {
+    width: 400px;
+    height: 6px;
+    background: #151518;
+    border-radius: 10px;
+
+    div {
+      width: 2px;
+      height: 6px;
+
+      background: $red;
+      border-radius: 10px;
+    }
+  }
+
+  #mytimeDiv {
+    display: flex;
+
+    #mystarttime {
+      width: 50px;
+      height: 15px;
+      color: #494b4e;
+      line-height: 0;
+      font-size: 11pt;
+      margin-top: -7px;
+      margin-left: 17px;
+    }
+    #myendtime {
+      width: 50px;
+      height: 15px;
+      color: #494b4e;
+      line-height: 0;
+      font-size: 11pt;
+      margin-top: -7px;
+      margin-left: 315px;
+    }
+  }
+
+  // 컨트롤 버튼 부분
+  #playerControlButtonDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 70px;
+
+    margin-top: -10px;
+    box-sizing: border-box;
+
+    img {
+      width: 30px;
+      height: 30px;
+
+      cursor: pointer;
+    }
+
+    #prev,
+    #next {
+      width: 35px;
+      height: 35px;
+    }
+
+    #mute {
+      width: 25px;
+      height: 25px;
+    }
+
+    .hidden {
+      display: none;
+    }
+  }
+}
+
+// 플레이리스트 부분
+#playerlistDiv {
+  width: 60%;
+  height: 100%;
+
+  background-color: $formGradientBg;
+  color: #fff;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+
+  padding: 30px;
+  gap: 30px;
+
+  box-sizing: border-box;
+
+  #nowAddedListDiv {
+    width: 100%;
+    height: 300px;
+
+    box-sizing: border-box;
+
+    h1 {
+      width: auto;
+      font-size: 30px;
+      font-weight: 500;
+
+      border-bottom: 1px solid #fff;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+
+    #playlistol {
+      display: flex;
+      flex-direction: column;
+
+      box-sizing: border-box;
+
+      width: 700px;
+      height: 230px;
+
+      padding: 20px;
+      padding-left: 0;
+      margin-bottom: 20px;
+
+      li {
+        margin-bottom: 20px;
+
+        cursor: pointer;
+      }
+
+      #songTitle {
+        font-size: 23px;
+        margin-bottom: 10px;
+      }
+
+      #songArtist {
+        font-size: 20px;
+      }
+
+      overflow: auto;
+      overflow-y: hidden;
+      overflow-y: hidden;
+
+      &:hover {
+        overflow-y: visible;
+        cursor: pointer;
+      }
+
+      &::-webkit-scrollbar {
+        width: 7px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+        margin-bottom: 20px;
+        margin-top: 7px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $blackScrollBar;
+        border-radius: 30px;
+      }
+    }
+  }
+
+  #wholeMusiclistDiv {
+    width: 100%;
+    height: 280px;
+
+    h1 {
+      font-size: 30px;
+      font-weight: 500;
+
+      border-bottom: 1px solid #fff;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+  }
+}

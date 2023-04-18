@@ -2,19 +2,25 @@ extends base
 
 block content
     div(id="mainDiv")
-        div(id="topTracks")
-            p Top Track 
-            p(id="desc") This is Top 50 Track list !
+        div(id="top")
+            p Pop Top Track 
+            p(id="desc") This is Pop Top 50 Track list ! 
+            p(id="descSecond") when you click each song, 
+            p(id="descLast") you can get information about Song.
             div(id="trackListDiv")
                 ul(id="trackList") 
         //- div(id="popList")
         //-     p POP Track List
         div(id="playlist")
-            h1 Playlist
             div(id="playlistBody")
                 img(id="musicImg")
                 p(id="musicTitle") music title
                 p(id="musicArtist") artist
+                div(id="slider")
+                    div(id="elapsed")
+                div(id="timeDiv")
+                    p(id="starttime") 0:00
+                    p(id="endtime") 0:00
                 div(id="musicBtnDiv")
                     img(id="prev" src="/static/images/prev.png" alt="prev")
                     img(id="play" src="/static/images/play.png" alt="play")

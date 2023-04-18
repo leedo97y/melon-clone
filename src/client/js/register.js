@@ -11,7 +11,7 @@ const onSubmitForm = async (e) => {
 
   const email = emailInput.value;
   const password = passwordInput.value;
-  const nickname = nicknameInput.value;
+  // const nickname = nicknameInput.value;
 
   // vaildation test
   const emailValidationCheck = (email) => {
@@ -20,16 +20,16 @@ const onSubmitForm = async (e) => {
       .match(/^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/);
   };
 
-  const nicknameValidationCheck = (nickname) => {
-    return String(nickname).length >= 2;
-  };
+  // const nicknameValidationCheck = (nickname) => {
+  //   return String(nickname).length >= 2;
+  // };
 
   const emailValid = emailValidationCheck(email);
-  const nicknameValid = nicknameValidationCheck(nickname);
+  // const nicknameValid = nicknameValidationCheck(nickname);
 
-  if (!nicknameValid) {
-    return alert("닉네임은 2자 이상이어야 합니다.");
-  }
+  // if (!nicknameValid) {
+  //   return alert("닉네임은 2자 이상이어야 합니다.");
+  // }
 
   if (!emailValid) {
     return alert("이메일 형식을 확인해주세요.");
@@ -39,13 +39,13 @@ const onSubmitForm = async (e) => {
     const data = {
       email,
       password,
-      nickname,
+      // nickname,
     };
 
     await Api.post("/apis/register", data);
 
-    alert("회원가입이 완료되었습니다.");
-    window.location.href = "/login";
+    alert("로그인이 완료되었습니다.");
+    window.location.href = "/";
   } catch (err) {
     console.log(err);
   }
