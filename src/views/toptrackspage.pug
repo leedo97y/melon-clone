@@ -2,25 +2,39 @@ extends base
 
 block content
   div(id="worldTopTrackDiv")
-    h1 World Top Music chart
+    h1 World Music Top 5
     //- 전체 div 밑에 나라 카드 놓고 누르면 돌아가면서 리스트 나오게 만들기
     div(id="worldCardsDiv")
         div(id="worldCard" class="us")
-          img(src="/static/images/us.jpg", alt="us" )
+          img(id="img" src="/static/images/us.jpg", alt="us" )
           p United States
+          div(id="trackListDivUs" class="hiddenlist")
+                ul(id="trackListUs")
         div(id="worldCard" class="uk")
-          img(src="/static/images/uk.jpg", alt="uk" )
+          img(id="img" src="/static/images/uk.jpg", alt="uk" )
           p UK
+          div(id="trackListDivUk" class="hiddenlist")
+                ul(id="trackListUk")
         div(id="worldCard" class="canada")
-          img(src="/static/images/canada.jpg", alt="canada" )
+          img(id="img" src="/static/images/canada.jpg", alt="canada" )
           p Canada
+          div(id="trackListDivCanada" class="hiddenlist")
+                ul(id="trackListCanada")
         div(id="worldCard" class="italy")
-          img(src="/static/images/italy.jpg", alt="italy" )
+          img(id="img" src="/static/images/italy.jpg", alt="italy" )
           p Italy
+          div(id="trackListDivItaly" class="hiddenlist")
+                ul(id="trackListItaly")
         div(id="worldCard" class="france")
-          img(src="/static/images/france.jpg", alt="france" )
+          img(id="img" src="/static/images/france.jpg", alt="france" )
           p France
-
+          div(id="trackListDivFrance" class="hiddenlist")
+                ul(id="trackListFrance")
+        div(id="worldCard" class="denmark")
+          img(id="img" src="/static/images/denmark.jpg", alt="denmark" )
+          p Denmark
+          div(id="trackListDivDenmark" class="hiddenlist")
+                ul(id="trackListDenmark")
 
 
   script(src="/static/js/toptracks.js") 

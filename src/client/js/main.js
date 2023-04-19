@@ -29,6 +29,7 @@ import("../images/uk.jpg");
 import("../images/canada.jpg");
 import("../images/italy.jpg");
 import("../images/france.jpg");
+import("../images/denmark.jpg");
 
 // audios
 import("../audios/Edge of Desire-John Mayer.mp3");
@@ -44,18 +45,18 @@ import("../audios/One Call Away.mp3");
 import("../audios/Golden Hour.mp3");
 import("../audios/Upside Down (feat. Charlie Puth).mp3");
 
+// home chart part
 const API_KEY = process.env.API_KEY;
 // const TOP_ARTIST_API = `https://ws.audioscrobbler.com/2.0/?method=geo.gettopartists&country=KOREA,%20REPUBLIC%20OF&api_key=${API_KEY}&format=json`;
 // const TOP_SONG_API = `https://ws.audioscrobbler.com/2.0/?method=geo.gettoptracks&country=KOREA,%20REPUBLIC%20OF&api_key=${API_KEY}&format=json`;
 const CHART_API = `https://ws.audioscrobbler.com/2.0/?method=chart.gettoptracks&api_key=${API_KEY}&format=json`;
 
-const trackList = document.querySelector("ul");
+const trackList = document.querySelector("#trackList");
 
 const getDataForChart = async () => {
   await fetch(CHART_API)
     .then((res) => res.json())
     .then((datas) => {
-      // console.log(datas.tracks.track);
       const trackDatas = datas.tracks.track;
 
       let count = 0;
