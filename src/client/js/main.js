@@ -8,6 +8,7 @@ import "../images/play.png";
 import "../images/prev.png";
 import "../images/pause.png";
 import "../images/next.png";
+import "../images/plus.png";
 
 // album cover images
 import("../images/redLP.jpeg");

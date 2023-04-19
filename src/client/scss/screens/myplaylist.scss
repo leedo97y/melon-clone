@@ -167,7 +167,7 @@
 
       box-sizing: border-box;
 
-      width: 700px;
+      width: 780px;
       height: 230px;
 
       padding: 20px;
@@ -249,17 +249,29 @@
 
       box-sizing: border-box;
 
-      width: 700px;
+      width: 780px;
       height: 230px;
 
       padding: 20px;
+      padding-right: 10px;
       padding-left: 0;
       margin-bottom: 20px;
 
       li {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-sizing: border-box;
+        padding-right: 10px;
+
         margin-bottom: 20px;
 
         cursor: pointer;
+
+        #plus {
+          width: 20px;
+          height: 20px;
+        }
       }
 
       #musicli {

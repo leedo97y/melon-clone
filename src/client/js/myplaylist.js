@@ -172,18 +172,24 @@ const showPlaylist = () => {
     const playlistol = document.getElementById("playlistol");
     const wholeMusiclistol = document.getElementById("wholeMusiclistol");
     const li = document.createElement("li");
+    const div = document.createElement("div");
     const p = document.createElement("p");
     const span = document.createElement("span");
+    const plus = document.createElement("img");
 
     // each song title and artist
-
+    div.id = "infoDiv";
     p.id = "musicPlayTitle";
     p.innerHTML = music.title;
     span.id = "musicPlayArtist";
     span.innerHTML = music.artist;
+    plus.id = "plus";
+    plus.src = "/static/images/plus.png";
 
-    li.append(p);
-    li.append(span);
+    div.append(p);
+    div.append(span);
+    li.append(div);
+    li.append(plus);
     wholeMusiclistol.append(li);
 
     const playMusic = () => {
@@ -198,6 +204,7 @@ const showPlaylist = () => {
       // li를 추가해준다. + id도 추가해준다.
       playlistol.appendChild(li);
       li.id = "musicli";
+      li.removeChild(plus);
 
       audio.play();
     };
@@ -227,6 +234,8 @@ const showPlaylist = () => {
 
     li.append(p);
     li.append(span);
+    // 플레이리스트에 추가
+    // 영구적이진 않음 = 추후에 DB에 넣어줘야할거 같음.
     playlistol.append(li);
 
     const playMusic = () => {
@@ -248,12 +257,14 @@ const showPlaylist = () => {
       audio.pause();
     };
 
+    // 음악 추가랑 같은 click으로 이뤄져야함.
     li.addEventListener("click", playMusic);
     pause.addEventListener("click", pauseMusic);
   });
 };
 
 const onPlay = () => {
+  // 끝났을때 다음 곡 재생
   if (audio.ended) {
     musicIndex++;
 
@@ -261,7 +272,6 @@ const onPlay = () => {
       musicIndex = 0;
     }
     loadMusic(albumData[musicIndex]);
-    audio.play();
   }
 
   play.classList.add(hidden);
