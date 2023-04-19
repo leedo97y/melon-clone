@@ -23,6 +23,13 @@ import("../images/ive2.png");
 import("../images/charlie puth.png");
 import("../images/charlie puth1.jpeg");
 
+// card cover images
+import("../images/us.jpg");
+import("../images/uk.jpg");
+import("../images/canada.jpg");
+import("../images/italy.jpg");
+import("../images/france.jpg");
+
 // audios
 import("../audios/Edge of Desire-John Mayer.mp3");
 import("../audios/Gravity-John Mayer.mp3");
