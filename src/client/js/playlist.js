@@ -4,6 +4,12 @@ const artist = document.querySelector("#musicArtist");
 
 const musicData = [
   {
+    title: "Golden Hour",
+    artist: "JVKE",
+    image: "/static/images/jvke1.jpeg",
+    source: "/static/audios/Golden hour.mp3",
+  },
+  {
     title: "Edge of Desire",
     artist: "John Mayer",
     image: "/static/images/John-Mayer-2.jpg",
@@ -20,12 +26,6 @@ const musicData = [
     artist: "Newjeans",
     image: "/static/images/newjeans.jpeg",
     source: "/static/audios/Hype Boy.mp3",
-  },
-  {
-    title: "Golden Hour",
-    artist: "JVKE",
-    image: "/static/images/jvke1.jpeg",
-    source: "/static/audios/Golden hour.mp3",
   },
   {
     title: "Free Fallin' ",

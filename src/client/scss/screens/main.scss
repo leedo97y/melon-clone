@@ -3,7 +3,7 @@
   height: 700px;
 
   box-sizing: border-box;
-  padding-top: 30px;
+  padding-top: 50px;
 
   display: flex;
   flex-direction: row;
@@ -101,13 +101,16 @@
     margin-bottom: 20px;
     display: flex;
     flex-direction: row;
+    align-items: center;
 
     padding: 10px;
 
     #rank {
       width: 20px;
       height: 20px;
-      margin-top: 25px;
+      font-size: 18px;
+      font-weight: 600;
+
       text-align: center;
     }
 
