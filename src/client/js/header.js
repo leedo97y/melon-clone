@@ -2,20 +2,20 @@ const link = document.querySelector("a");
 const button = document.querySelector("#loginBtn");
 const home = document.querySelector("#homeTitle");
 const topTracks = document.querySelector("#topTracks");
-const pop = document.querySelector("#pop");
+const popstar = document.querySelector("#popstar");
 const kPop = document.querySelector("#kPop");
 
 // button event
 const location = window.location.pathname.split("/")[1];
 
-if (
-  location === "" ||
-  location === "toptracks" ||
-  location === "pop" ||
-  location === "kpop"
-) {
-  link.innerHTML = "myplaylist";
-  link.href = "/myplaylist";
+if (location === "") {
+  link.innerHTML = "Login";
+  link.href = "/register";
+
+  if (sessionStorage.getItem("token") === "doylee") {
+    link.innerHTML = "My Playlist";
+    link.href = "/myplaylist";
+  }
 }
 
 if (location === "register") {
@@ -24,8 +24,15 @@ if (location === "register") {
 }
 
 if (location === "myplaylist") {
-  button.style.display = "none";
-  link.style.display = "none";
+  link.innerHTML = "Logout";
+
+  link.href = "/";
+  sessionStorage.removeItem("token");
+}
+
+if (location === "toptracks" || location === "popstar" || location === "kpop") {
+  link.innerHTML = "My Playlist";
+  link.href = "myplaylist";
 }
 
 // click title event
@@ -37,8 +44,8 @@ const onClickChannelTopTracks = () => {
   window.location.href = "/toptracks";
 };
 
-const onClickChannelPop = () => {
-  window.location.href = "/pop";
+const onClickChannelPopstar = () => {
+  window.location.href = "/popstar";
 };
 
 const onClickChannelKpop = () => {
@@ -47,5 +54,5 @@ const onClickChannelKpop = () => {
 
 home.addEventListener("click", onClickHomeTitle);
 topTracks.addEventListener("click", onClickChannelTopTracks);
-pop.addEventListener("click", onClickChannelPop);
+popstar.addEventListener("click", onClickChannelPopstar);
 kPop.addEventListener("click", onClickChannelKpop);

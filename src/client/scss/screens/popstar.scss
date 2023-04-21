@@ -1,0 +1,187 @@
+#popDiv {
+  width: 100%;
+  height: 700px;
+
+  box-sizing: border-box;
+  padding-top: 30px;
+
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 100px;
+
+  background: $gradientBg;
+
+  #headingTitle {
+    font-size: 35px;
+    font-weight: 600;
+
+    margin-bottom: 10px;
+  }
+}
+
+// star personal Info
+#popStarInfoDiv {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+
+  width: 80%;
+  height: 700px;
+  background-color: $lightBg;
+}
+
+#starImageAndAlbum {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+
+  background-color: $lightBg;
+
+  width: 40%;
+  padding: 30px;
+}
+
+// star image, star name part
+#starInfoDiv {
+  width: 100%;
+  height: 480px;
+  margin-bottom: 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  box-sizing: border-box;
+
+  #starImage {
+    position: relative;
+    z-index: 0;
+    width: 100%;
+    height: 415px;
+
+    filter: opacity(70%);
+  }
+
+  #starName {
+    position: relative;
+    z-index: 1;
+    height: 50px;
+    margin-right: 10px;
+    margin-top: -50px;
+
+    text-align: right;
+
+    font-size: 40px;
+    font-weight: 700;
+  }
+}
+
+// similar star part
+#similarStarDiv {
+  width: 100%;
+  height: 130px;
+
+  box-sizing: border-box;
+
+  #starUl {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+
+    #liStar {
+      margin-right: 20px;
+      padding-left: 10px;
+
+      #smallStarImg {
+        width: 100px;
+        height: 100px;
+        margin-bottom: 10px;
+
+        border-radius: 100px;
+      }
+
+      #smallStarP {
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+// star description part
+#starDescDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+
+  box-sizing: border-box;
+
+  width: 60%;
+  padding: 30px;
+
+  background-color: $lightRed;
+  color: $bg;
+
+  #tagDiv {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    width: 100%;
+    height: 100px;
+    margin-bottom: 50px;
+
+    #tagTitle {
+      font-size: 30px;
+      font-weight: 600;
+
+      margin-bottom: 30px;
+    }
+
+    #tagUl {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      #tagLi {
+        margin-right: 20px;
+
+        font-size: 19px;
+        color: $darkRed;
+        letter-spacing: 1.3px;
+
+        padding: 15px;
+        border: 1.5px solid $darkRed;
+        border-radius: 40px;
+      }
+    }
+  }
+
+  #starTextDiv {
+    display: flex;
+    flex-direction: column;
+
+    box-sizing: border-box;
+
+    #starDescTitle {
+      font-size: 30px;
+      font-weight: 600;
+
+      margin-bottom: 20px;
+    }
+
+    #starDesc {
+      font-size: 20px;
+      line-height: 30px;
+      letter-spacing: 1.3px;
+
+      a {
+        display: none;
+      }
+    }
+  }
+}

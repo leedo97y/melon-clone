@@ -16,10 +16,16 @@ const musicData = [
     source: "/static/audios/Gravity-John Mayer.mp3",
   },
   {
-    title: "In Your Atmospher",
-    artist: "John Mayer",
-    image: "/static/images/John-Mayer-4.jpeg",
-    source: "/static/audios/In Your Atmosphere-John Mayer.mp3",
+    title: "Hype Boy",
+    artist: "Newjeans",
+    image: "/static/images/newjeans.jpeg",
+    source: "/static/audios/Hype Boy.mp3",
+  },
+  {
+    title: "Golden Hour",
+    artist: "JVKE",
+    image: "/static/images/jvke1.jpeg",
+    source: "/static/audios/Golden hour.mp3",
   },
   {
     title: "Free Fallin' ",
@@ -28,10 +34,10 @@ const musicData = [
     source: "/static/audios/Free Fallin'.mp3",
   },
   {
-    title: "Last Train Home",
-    artist: "John Mayer",
-    image: "/static/images/John-Mayer-3.jpeg",
-    source: "/static/audios/Last Train Home.mp3",
+    title: "I AM",
+    artist: "IVE",
+    image: "/static/images/ive.jpg",
+    source: "/static/audios/I AM.mp3",
   },
   {
     title: "The Age of Worry",

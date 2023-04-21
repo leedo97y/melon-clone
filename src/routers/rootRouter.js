@@ -6,7 +6,7 @@ import {
   login,
   myplaylist,
   toptracks,
-  pop,
+  popstar,
   kpop,
 } from "../controllers/songController";
 let path = require("path");
@@ -20,7 +20,7 @@ rootRouter.use("/register", register);
 rootRouter.use("/login", login);
 rootRouter.use("/myplaylist", myplaylist);
 rootRouter.use("/toptracks", toptracks);
-rootRouter.use("/pop", pop);
+rootRouter.use("/popstar", popstar);
 rootRouter.use("/kpop", kpop);
 
 function serveStatic(resource) {

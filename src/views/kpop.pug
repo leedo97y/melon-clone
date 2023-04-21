@@ -2,7 +2,35 @@ extends base
 
 block content
   div(id="kpopDiv")
-    
+    div(id="kpopChartDiv")
+      p(id="kpopChartTitle") Top 5 K-POP Chart
+      ul(id="kpopChartUl")
+        //- li(id="kpopChartLl")
+          //-   p(id="kpopChartRank")
+          //-   img(id="kpopChartImg")
+          //-   div(id="kpopChartMusicDiv")
+          //-     p(id="kpopChartMusicName")
+          //-     p(id="kpopChartMusicArtist")
+    div(id="kpopArtistDiv")
+      div(id="artistLeftDiv")
+        p(id="kpopArtistTitle") Top 1 K-POP Artist
+        div(id="kpopArtistInfoDiv")
+          img(id="kpopArtistImg" src="#", alt="kpopArtistImg")
+          p(id="kpopArtistName") Artist Name
+        div(id="kpopArtistAlbumDiv")
+          ul(id="kpopArtistAlbumUl")
+            //- li(id="kpopArtistAlbumLl")
+            //-   img(id="artistAlbumImg")
+            //-   p(id="artistAlbumName") name
+      div(id="artistRightDiv")
+        div(id="kpopArtistTagDiv")
+          p(id="kpopArtistTagTitle") Tag
+          ul(id="kpopArtistTagUl")
+            //- li(id="kpopArtistTagLl")
+        div(id="kpopArtistDescDiv")
+          p(id="kpopArtistDescTitle") Biography
+          p(id="kpopArtistDesc")
+        
 
 
   script(src="/static/js/kpop.js") 

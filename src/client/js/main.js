@@ -10,6 +10,10 @@ import "../images/pause.png";
 import "../images/next.png";
 import "../images/plus.png";
 
+// favicon, logo
+import("../images/tomato_favicon.png");
+import("../images/tomato_logo.png");
+
 // album cover images
 import("../images/redLP.jpeg");
 import("../images/John-Mayer.jpg");
@@ -22,6 +26,8 @@ import("../images/ive1.png");
 import("../images/ive2.png");
 import("../images/charlie puth.png");
 import("../images/charlie puth1.jpeg");
+import("../images/lesserafim.jpg");
+import("../images/newjeans.jpeg");
 
 // card cover images
 import("../images/us.jpg");
@@ -44,6 +50,11 @@ import("../audios/Light Switch.mp3");
 import("../audios/One Call Away.mp3");
 import("../audios/Golden Hour.mp3");
 import("../audios/Upside Down (feat. Charlie Puth).mp3");
+import("../audios/impurities.mp3");
+import("../audios/Hype Boy.mp3");
+import("../audios/Blue Flame.mp3");
+import("../audios/no celestial.mp3");
+import("../audios/good parts.mp3");
 
 // home chart part
 const API_KEY = process.env.API_KEY;
@@ -79,12 +90,12 @@ const getDataForChart = async () => {
         artist.href = `${data.artist.url}`;
         img.src = "/static/images/redLP.jpeg";
 
-        trackList.appendChild(li);
-        li.appendChild(rank);
-        li.appendChild(img);
-        li.appendChild(textDiv);
-        textDiv.appendChild(title);
-        textDiv.appendChild(artist);
+        trackList.append(li);
+        li.append(rank);
+        li.append(img);
+        li.append(textDiv);
+        textDiv.append(title);
+        textDiv.append(artist);
       });
     })
     .catch((err) => console.error(err));

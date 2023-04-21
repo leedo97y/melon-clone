@@ -45,6 +45,7 @@ const onSubmitForm = async (e) => {
     await Api.post("/apis/register", data);
 
     alert("로그인이 완료되었습니다.");
+    sessionStorage.setItem("token", process.env.COOKIE_SECRET);
     window.location.href = "/";
   } catch (err) {
     console.log(err);

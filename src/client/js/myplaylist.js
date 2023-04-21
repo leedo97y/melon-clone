@@ -90,6 +90,36 @@ const wholePlaylistData = [
     image: "/static/images/charlie puth1.jpeg",
     source: "/static/audios/Light Switch.mp3",
   },
+  {
+    title: "Good Parts",
+    artist: "LESSERAFIM",
+    image: "/static/images/lesserafim.jpg",
+    source: "/static/audios/good parts.mp3",
+  },
+  {
+    title: "Impurities",
+    artist: "LESSERAFIM",
+    image: "/static/images/lesserafim.jpg",
+    source: "/static/audios/impurities.mp3",
+  },
+  {
+    title: "Blue Flame",
+    artist: "LESSERAFIM",
+    image: "/static/images/lesserafim.jpg",
+    source: "/static/audios/Blue Flame.mp3",
+  },
+  {
+    title: "No Celestial",
+    artist: "LESSERAFIM",
+    image: "/static/images/lesserafim.jpg",
+    source: "/static/audios/no celestial.mp3",
+  },
+  {
+    title: "Hype Boy",
+    artist: "Newjeans",
+    image: "/static/images/newjeans.jpeg",
+    source: "/static/audios/Hype Boy.mp3",
+  },
 ];
 
 const audio = new Audio(albumData);
@@ -118,7 +148,6 @@ function timeUpdate() {
   playtime.style.width = playPercent + "px";
 
   // 시작시간이 늘어나게 만들 예정
-
   if (durationTime <= 9) {
     endtime.innerHTML = `0:0${durationTime}`;
   } else if (durationTime >= 10 && durationTime <= 59) {
@@ -133,7 +162,6 @@ function timeUpdate() {
     }
   }
 
-  // 시간표현 부분 하면 됨.
   if (seconds <= 9) {
     starttime.innerHTML = `0:0${seconds}`;
   } else if (seconds >= 10 && seconds <= 59) {
@@ -201,8 +229,16 @@ const showPlaylist = () => {
       play.classList.add(hidden);
       pause.classList.remove(hidden);
 
-      // li를 추가해준다. + id도 추가해준다.
-      playlistol.appendChild(li);
+      // 플레이리스트에 li를 추가해준다. + id도 추가해준다.
+      // 영구적이진 않음 = 추후에 DB에 넣어줘야할거 같음.
+      // 이어서 재생 가능하게 만들기 위해 리스트에 push 해준다.
+      albumData.push({
+        title: music.title,
+        artist: music.artist,
+        image: music.image,
+        source: music.source,
+      });
+      playlistol.append(li);
       li.id = "musicli";
       li.removeChild(plus);
 
@@ -225,17 +261,19 @@ const showPlaylist = () => {
     const li = document.createElement("li");
     const p = document.createElement("p");
     const span = document.createElement("span");
+    const div = document.createElement("div");
+    const plus = document.createElement("img");
 
     // each song title and artist
+    div.id = "musicInfoDiv";
     p.id = "songTitle";
     p.innerHTML = song.title;
     span.id = "songArtist";
     span.innerHTML = song.artist;
 
-    li.append(p);
-    li.append(span);
-    // 플레이리스트에 추가
-    // 영구적이진 않음 = 추후에 DB에 넣어줘야할거 같음.
+    div.append(p);
+    div.append(span);
+    li.append(div);
     playlistol.append(li);
 
     const playMusic = () => {
@@ -246,6 +284,20 @@ const showPlaylist = () => {
 
       play.classList.add(hidden);
       pause.classList.remove(hidden);
+
+      // 플레이리스트에 li를 추가해준다. + id도 추가해준다.
+      // 영구적이진 않음 = 추후에 DB에 넣어줘야할거 같음.
+      wholePlaylistData.push({
+        title: song.title,
+        artist: song.artist,
+        image: song.image,
+        source: song.source,
+      });
+      wholeMusiclistol.append(li);
+      li.id = "songli";
+      plus.id = "plus";
+      plus.src = "/static/images/plus.png";
+      li.append(plus);
 
       audio.play();
     };
@@ -265,14 +317,14 @@ const showPlaylist = () => {
 
 const onPlay = () => {
   // 끝났을때 다음 곡 재생
-  if (audio.ended) {
-    musicIndex++;
+  // if (audio.ended) {
+  //   musicIndex++;
 
-    if (musicIndex > albumData.length - 1) {
-      musicIndex = 0;
-    }
-    loadMusic(albumData[musicIndex]);
-  }
+  //   if (musicIndex > albumData.length - 1) {
+  //     musicIndex = 0;
+  //   }
+  //   loadMusic(albumData[musicIndex]);
+  // }
 
   play.classList.add(hidden);
   pause.classList.remove(hidden);

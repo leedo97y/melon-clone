@@ -34,6 +34,8 @@
   margin-bottom: 20px;
   padding: 30px;
 
+  border-radius: 5px;
+
   #desc {
     font-size: 17px;
     margin-top: 10px;
@@ -129,18 +131,6 @@
   }
 }
 
-// //// pop list
-// #popList {
-//   width: 500px;
-//   height: 700px;
-
-//   box-sizing: border-box;
-
-//   background-color: $lightBg;
-// }
-
-//// playlist
-
 #playlist {
   display: flex;
   flex-direction: column;
@@ -149,6 +139,7 @@
   gap: 20px;
 
   box-sizing: border-box;
+  border-radius: 5px;
 
   width: 500px;
   height: 700px;
@@ -170,8 +161,10 @@
   box-sizing: border-box;
 
   #musicImg {
-    width: 250px;
-    height: 250px;
+    width: 300px;
+    height: 300px;
+
+    border-radius: 5px;
 
     background-color: $bg;
   }
@@ -182,7 +175,7 @@
 
   #musicArtist {
     font-size: 20px;
-    margin-top: -5px;
+    margin-top: -10px;
   }
 
   #slider {
@@ -229,6 +222,7 @@
   gap: 50px;
 
   box-sizing: border-box;
+  margin-top: -10px;
 
   img {
     width: 30px;
@@ -269,9 +263,9 @@
     box-sizing: border-box;
 
     width: 400px;
-    height: 150px;
+    height: 120px;
 
-    padding: 20px;
+    padding: 10px 20px 20px 20px;
 
     li {
       margin-bottom: 20px;

@@ -13,7 +13,7 @@ module.exports = {
     // login: BASE_JS + "login.js",
     myplaylist: BASE_JS + "myplaylist.js",
     toptracks: BASE_JS + "toptracks.js",
-    pop: BASE_JS + "pop.js",
+    popstar: BASE_JS + "popstar.js",
     kpop: BASE_JS + "kpop.js",
     api: BASE_JS + "api.js",
   },

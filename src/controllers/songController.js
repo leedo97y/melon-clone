@@ -13,8 +13,8 @@ export const myplaylist = async (req, res) => {
 export const toptracks = async (req, res) => {
   return res.render("toptrackspage", { pageTitle: "topTracks" });
 };
-export const pop = async (req, res) => {
-  return res.render("pop", { pageTitle: "pop" });
+export const popstar = async (req, res) => {
+  return res.render("popstar", { pageTitle: "popstar" });
 };
 export const kpop = async (req, res) => {
   return res.render("kpop", { pageTitle: "k-pop" });

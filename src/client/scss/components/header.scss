@@ -13,11 +13,23 @@
 
   background-color: $red;
 
-  h1 {
-    font-size: 50px;
-    font-weight: 700;
+  #homeTitleDiv {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 
-    margin-left: 50px;
+    #tomatoLogo {
+      width: 100px;
+      height: 90px;
+      margin-left: 50px;
+    }
+
+    h1 {
+      font-size: 55px;
+      font-weight: 700;
+      margin-left: 10px;
+    }
+
     margin-right: 500px;
   }
 }
