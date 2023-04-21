@@ -1,7 +1,8 @@
 {
+  "homepage": "Tomato",
   "name": "tomato",
   "version": "1.0.0",
-  "description": "xxxx",
+  "description": "Tomato Music",
   "scripts": {
     "start": "node build/init.js",
     "build": "npm run build:server && npm run build:assets",
@@ -30,7 +31,8 @@
     "node-fetch": "^2.6.1",
     "postcss": "^8.4.21",
     "pug": "^3.0.2",
-    "regenerator-runtime": "^0.13.7"
+    "regenerator-runtime": "^0.13.7",
+    "webpack-dev-server": "^4.13.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.13.16",
@@ -43,6 +45,7 @@
     "cross-env": "^7.0.3",
     "css-loader": "^5.2.2",
     "file-loader": "^6.2.0",
+    "gh-pages": "^5.0.0",
     "image-webpack-loader": "^8.1.0",
     "mini-css-extract-plugin": "^1.5.0",
     "nodemon": "^2.0.7",
