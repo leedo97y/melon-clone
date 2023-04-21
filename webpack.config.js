@@ -29,13 +29,13 @@ module.exports = {
   ],
   output: {
     filename: "js/[name].js",
-    path: path.resolve(__dirname, "assets"),
+    path: path.resolve(__dirname, "build"),
   },
-  devServer: {
-    contentBase: __dirname + "/assets/",
-    host: "localhost",
-    port: 4000,
-  },
+  // devServer: {
+  //   contentBase: __dirname + "/assets/",
+  //   host: "localhost",
+  //   port: 4000,
+  // },
   module: {
     rules: [
       {
