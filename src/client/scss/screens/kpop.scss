@@ -105,11 +105,6 @@
 
   box-sizing: border-box;
 
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
-
   // x - scroll
   overflow: auto;
   overflow-y: hidden;
@@ -117,6 +112,13 @@
   #kpopArtistAlbumUl {
     width: 100%;
     height: 100%;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: flex-start;
+
+    gap: 30px;
   }
 }
 
@@ -150,6 +152,12 @@
     #kpopArtistDescTitle {
       font-size: 35px;
       font-weight: 600;
+    }
+
+    #kpopArtistDesc {
+      a {
+        display: none;
+      }
     }
   }
 }
