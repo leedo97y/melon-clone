@@ -31,6 +31,11 @@ module.exports = {
     filename: "js/[name].js",
     path: path.resolve(__dirname, "assets"),
   },
+  devServer: {
+    contentBase: __dirname + "/assets/",
+    host: "localhost",
+    port: 4000,
+  },
   module: {
     rules: [
       {
