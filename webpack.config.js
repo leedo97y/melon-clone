@@ -33,7 +33,7 @@ module.exports = {
   ],
   output: {
     filename: "js/[name].js",
-    path: path.resolve(__dirname, "docs"),
+    path: path.resolve(__dirname, "assets"),
   },
   module: {
     rules: [
