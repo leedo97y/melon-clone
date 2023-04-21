@@ -23,11 +23,7 @@ module.exports = {
       filename: "css/styles.css",
     }),
     new HtmlWebpackPlugin({
-      templateContent: ({ htmlWebpackPlugin }) =>
-        '<!DOCTYPE html><html><head><meta charset="utf-8"><title>' +
-        htmlWebpackPlugin.options.title +
-        '</title></head><body><div id="app"></div></body></html>',
-      filename: "base.html",
+      filename: "base.pug",
     }),
     new webpack.EnvironmentPlugin({
       API_KEY: "9ef77bf80f5f45115d9ad6df6c2de8ec",
