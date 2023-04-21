@@ -291,6 +291,30 @@
 
       gap: 20px;
 
+      // scroll
+      overflow: auto;
+      overflow-x: hidden;
+      overflow-y: hidden;
+
+      &:hover {
+        overflow-y: visible;
+      }
+
+      &::-webkit-scrollbar {
+        width: 7px;
+      }
+
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+        margin-bottom: 20px;
+        margin-top: 7px;
+      }
+
+      &::-webkit-scrollbar-thumb {
+        background-color: $whiteBg;
+        border-radius: 30px;
+      }
+
       #kpopArtistTagLl {
         width: 80px;
         height: 25px;
