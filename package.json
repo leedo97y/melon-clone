@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node build/init.js",
     "build": "npm run build:server && npm run build:assets",
-    "build:server": "babel src -d build",
+    "build:server": "babel src -d docs",
     "build:assets": "webpack --mode=production",
     "dev:server": "nodemon",
     "dev:assets": "cross-env webpack --mode=development -w"
