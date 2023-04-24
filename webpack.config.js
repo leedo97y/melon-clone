@@ -65,6 +65,31 @@ module.exports = {
           },
         ],
       },
+      {
+        test: /\.pug$/,
+        include: [path.resolve(__dirname, "src/views/partials")],
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "partials/",
+            },
+          },
+        ],
+      },
+      {
+        test: /\.pug$/,
+        include: [path.resolve(__dirname, "src/views")],
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+            },
+          },
+        ],
+      },
     ],
   },
 };
