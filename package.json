@@ -9,7 +9,7 @@
     "build:server": "babel src -d build",
     "build:assets": "webpack --mode=production",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d assets",
+    "deploy": "gh-pages -d assets --remote upstream",
     "dev:server": "nodemon",
     "dev:assets": "cross-env webpack --mode=development -w"
   },
