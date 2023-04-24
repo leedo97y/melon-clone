@@ -1,0 +1,1 @@
+(self.webpackChunktomato=self.webpackChunktomato||[]).push([[350],{350:(t,e,s)=>{"use strict";s.r(e),s.d(e,{default:()=>a});const a=s.p+"audios/no celestial.mp3"}}]);

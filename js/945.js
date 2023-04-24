@@ -1,1 +1,0 @@
-(self.webpackChunktomato=self.webpackChunktomato||[]).push([[945],{945:(a,t,e)=>{"use strict";e.r(t),e.d(t,{default:()=>s});const s=e.p+"audios/One Call Away.mp3"}}]);

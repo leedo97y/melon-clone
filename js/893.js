@@ -1,1 +1,0 @@
-(self.webpackChunktomato=self.webpackChunktomato||[]).push([[893],{893:(t,o,s)=>{"use strict";s.r(o),s.d(o,{default:()=>a});const a=s.p+"audios/good parts.mp3"}}]);
