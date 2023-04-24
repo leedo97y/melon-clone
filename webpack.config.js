@@ -14,7 +14,7 @@ module.exports = {
       filename: "css/styles.css",
     }),
     new HtmlWebpackPlugin({
-      template: "./src/views/base.pug",
+      template: "./src/views/home.pug",
       filename: "index.html",
     }),
     new webpack.EnvironmentPlugin({
