@@ -32,8 +32,7 @@
     "multer-s3": "^2.9.0",
     "node-fetch": "^2.6.1",
     "postcss": "^8.4.21",
-    "pug": "^2.0.2",
-    "pug-loader": "^2.4.0",
+    "pug": "^3.0.2",
     "regenerator-runtime": "^0.13.7",
     "webpack-dev-server": "^4.13.3"
   },
