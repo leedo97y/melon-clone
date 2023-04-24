@@ -10,17 +10,6 @@ import "../images/pause.png";
 import "../images/next.png";
 import "../images/plus.png";
 
-// js
-// import "../js/header";
-// import "../js/api";
-// import "../js/kpop";
-// import "../js/login";
-// import "../js/myplaylist";
-// import "../js/playlist";
-// import "../js/popstar";
-// import "../js/register";
-// import "../js/toptracks";
-
 // favicon, logo
 import("../images/tomato_favicon.png");
 import("../images/tomato_logo.png");
