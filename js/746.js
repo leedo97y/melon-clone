@@ -1,0 +1,1 @@
+(self.webpackChunktomato=self.webpackChunktomato||[]).push([[746],{746:(e,t,s)=>{"use strict";s.r(t),s.d(t,{default:()=>a});const a=s.p+"images/ive2.png"}}]);

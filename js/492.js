@@ -1,0 +1,1 @@
+(self.webpackChunktomato=self.webpackChunktomato||[]).push([[492],{492:(t,s,a)=>{"use strict";a.r(s),a.d(s,{default:()=>e});const e=a.p+"audios/Light Switch.mp3"}}]);

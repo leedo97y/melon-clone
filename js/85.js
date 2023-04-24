@@ -1,0 +1,1 @@
+(self.webpackChunktomato=self.webpackChunktomato||[]).push([[85],{85:(s,t,e)=>{"use strict";e.r(t),e.d(t,{default:()=>a});const a=e.p+"images/us.jpg"}}]);
