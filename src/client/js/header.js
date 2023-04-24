@@ -30,9 +30,14 @@ if (location === "myplaylist") {
   sessionStorage.removeItem("token");
 }
 
-if (location === "toptracks" || location === "popstar" || location === "kpop") {
+if (
+  location === "toptracks" ||
+  location === "popstar" ||
+  location === "kpop" ||
+  location === "kpop/myplaylist"
+) {
   link.innerHTML = "My Playlist";
-  link.href = "myplaylist";
+  link.href = "/myplaylist";
 }
 
 // click title event
