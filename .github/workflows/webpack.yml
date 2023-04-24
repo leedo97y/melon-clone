@@ -5,8 +5,6 @@ on:
     - cron: '*/30 * * * *' # 30분 주기로 실행
   push:
     branches: [ "master" ]
-#   pull_request:
-#     branches: [ "master" ]
 
 jobs:
   deploy:
@@ -23,7 +21,7 @@ jobs:
     # node.js 사용
     - uses: actions/setup-node@v3
       with:
-        node-version: 16
+        node-version: 16.x
         
     - run: npm ci # package-lock.json 에 적혀있는 패키지 설치
     - run: npm run build # package.json에 빌드 스크립트
