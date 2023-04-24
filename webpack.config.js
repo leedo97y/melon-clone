@@ -25,6 +25,7 @@ module.exports = {
   output: {
     filename: "js/[name].js",
     path: path.resolve(__dirname, "assets"),
+    clean: true,
   },
   module: {
     rules: [
@@ -44,17 +45,25 @@ module.exports = {
       },
       {
         test: /\.(gif|png|jpe?g|svg)$/,
+        include: [path.resolve(__dirname, "src/client/images")],
         loader: "file-loader",
         options: {
-          name: "images/[name].[ext]",
+          name: "[name].[ext]",
+          outputPath: "images/",
         },
       },
       {
         test: /\.mp3$/,
-        loader: "file-loader",
-        options: {
-          name: "audios/[name].[ext]",
-        },
+        include: [path.resolve(__dirname, "src/client/audios")],
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "[name].[ext]",
+              outputPath: "audios/",
+            },
+          },
+        ],
       },
     ],
   },
