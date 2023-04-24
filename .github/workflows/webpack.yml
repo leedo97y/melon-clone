@@ -1,8 +1,6 @@
 name: NodeJS with Webpack
 
 on:
-  schedule:
-    - cron: '*/30 * * * *' # 30분 주기로 실행
   push:
     branches: [ "master" ]
 
