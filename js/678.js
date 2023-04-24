@@ -1,0 +1,1 @@
+(self.webpackChunktomato=self.webpackChunktomato||[]).push([[678],{678:(t,e,o)=>{"use strict";o.r(e),o.d(e,{default:()=>s});const s=o.p+"audios/Hype Boy.mp3"}}]);
