@@ -1,0 +1,39 @@
+name: NodeJS with Webpack
+
+on:
+  schedule:
+    - cron: '*/30 * * * *' # 30분 주기로 실행
+  push:
+    branches: [ "master" ]
+#   pull_request:
+#     branches: [ "master" ]
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+
+    strategy:
+      matrix:
+        node-version: [14.x, 16.x, 18.x]
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        
+    - run: npm ci # package-lock.json 에 적혀있는 패키지 설치
+    - run: npm run build # package.json에 빌드 스크립트
+    
+    # publish_dir에 들어있는 파일들을 gh-pages 브랜치에 올려줍니다.
+    - uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./assets
+
