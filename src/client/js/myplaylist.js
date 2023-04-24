@@ -49,12 +49,6 @@ const wholePlaylistData = [
     source: "/static/audios/I AM.mp3",
   },
   {
-    title: "After Like",
-    artist: "IVE",
-    image: "/static/images/ive1.png",
-    source: "/static/audios/After LIKE.mp3",
-  },
-  {
     title: "Kitsch",
     artist: "IVE",
     image: "/static/images/ive2.png",
