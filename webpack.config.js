@@ -1,5 +1,5 @@
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-// const HtmlWebpackPlugin = require("html-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
 const webpack = require("webpack");
 
@@ -13,9 +13,9 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "css/styles.css",
     }),
-    // new HtmlWebpackPlugin({
-    //   filename: "base.pug",
-    // }),
+    new HtmlWebpackPlugin({
+      filename: "home.pug",
+    }),
     new webpack.EnvironmentPlugin({
       API_KEY: "9ef77bf80f5f45115d9ad6df6c2de8ec",
       JWT_SECRET_KEY: "tomato",
