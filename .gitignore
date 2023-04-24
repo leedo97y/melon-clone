@@ -4,5 +4,4 @@
 .DS_Store
 /assets
 /build
-Dockerfile
-fly.toml
+/.github
