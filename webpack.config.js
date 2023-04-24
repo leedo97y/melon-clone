@@ -13,7 +13,10 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: "css/styles.css",
     }),
-    new HtmlWebpackPlugin(),
+    new HtmlWebpackPlugin({
+      template: "./src/views/base.pug",
+      filename: "index.html",
+    }),
     new webpack.EnvironmentPlugin({
       API_KEY: "9ef77bf80f5f45115d9ad6df6c2de8ec",
       JWT_SECRET_KEY: "tomato",
@@ -64,29 +67,8 @@ module.exports = {
         ],
       },
       {
-        test: /\.html$/,
-        include: [path.resolve(__dirname, "src/views/partials")],
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-              outputPath: "partials/",
-            },
-          },
-        ],
-      },
-      {
-        test: /\.html$/,
-        include: [path.resolve(__dirname, "src/views")],
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[ext]",
-            },
-          },
-        ],
+        test: /\.pug$/,
+        use: ["pug-loader"],
       },
     ],
   },
