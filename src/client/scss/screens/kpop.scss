@@ -16,6 +16,11 @@
   background: $gradientBg;
 }
 
+#kpopChartDiv,
+#kpopArtistDiv {
+  margin-top: -50px;
+}
+
 //// kpop chart part
 #kpopChartDiv {
   width: 30%;
@@ -37,7 +42,7 @@
   border-radius: 5px;
 
   #kpopChartTitle {
-    font-size: 33px;
+    font-size: 25px;
     font-weight: 600;
 
     margin-top: 10px;
@@ -79,9 +84,12 @@
   justify-content: center;
   align-items: flex-start;
 
+  width: 100%;
+
   // li style
   li {
-    margin-bottom: 20px;
+    width: 100%;
+    margin-bottom: 10px;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -92,16 +100,18 @@
       width: 20px;
       height: 20px;
 
+      margin-top: 5px;
+
       text-align: center;
 
-      font-size: 20px;
+      font-size: $basicFont;
       font-weight: 600;
     }
 
     img {
-      width: 64px;
-      height: 64px;
-      margin: 0 20px;
+      width: 50px;
+      height: 50px;
+      margin: 0 10px;
     }
 
     #kpopChartMusicDiv {
@@ -109,10 +119,14 @@
       flex-direction: column;
 
       #kpopChartMusicName {
-        font-size: 20px;
+        font-size: $middleFont;
         font-weight: 500;
 
-        margin-bottom: 10px;
+        margin-bottom: 5px;
+      }
+
+      #kpopChartMusicArtist {
+        font-size: $smallFont;
       }
     }
   }
@@ -151,11 +165,11 @@
   border-bottom-left-radius: 5px;
 
   #kpopArtistTitle {
-    font-size: 33px;
+    font-size: 25px;
     font-weight: 600;
 
-    margin-top: 10px;
-    margin-bottom: 20px;
+    margin-top: -10px;
+    margin-bottom: 10px;
 
     text-align: right;
   }
@@ -175,8 +189,8 @@
   #kpopArtistImg {
     position: relative;
     z-index: 0;
-    width: 390px;
-    height: 390px;
+    width: 100%;
+    height: 300px;
 
     border-radius: 5px;
 
@@ -197,8 +211,9 @@
 
 #kpopArtistAlbumDiv {
   width: 100%;
-  height: 100%;
-  padding-top: 25px;
+  height: 140px;
+  padding-top: 20px;
+  margin-bottom: -15px;
 
   box-sizing: border-box;
 
@@ -241,11 +256,16 @@
       display: flex;
       flex-direction: column;
 
-      gap: 20px;
+      gap: 10px;
+    }
+
+    img {
+      width: 50px;
+      height: 50px;
     }
 
     #artistAlbumName {
-      font-size: 12px;
+      font-size: 10px;
     }
   }
 }
@@ -274,7 +294,7 @@
     height: 30%;
 
     #kpopArtistTagTitle {
-      font-size: 33px;
+      font-size: 25px;
       font-weight: 600;
 
       margin-top: 10px;
@@ -288,6 +308,7 @@
       flex-wrap: wrap;
 
       padding-top: 25px;
+      margin-bottom: 10px;
 
       gap: 15px;
 
@@ -316,14 +337,14 @@
       }
 
       #kpopArtistTagLl {
-        width: 80px;
+        width: 100px;
         height: 25px;
-        padding: 10px 15px;
+        padding-top: 10px;
 
-        font-size: 20px;
+        font-size: $basicFont;
         font-weight: 600;
         color: $darkRed;
-        letter-spacing: 1.3px;
+        letter-spacing: 1px;
         text-align: center;
 
         border: 1.5px solid $darkRed;
@@ -337,16 +358,16 @@
     height: 60%;
 
     #kpopArtistDescTitle {
-      font-size: 33px;
+      font-size: 25px;
       font-weight: 600;
     }
 
     #kpopArtistDesc {
-      margin-top: 25px;
+      margin-top: 20px;
 
-      font-size: 19px;
-      line-height: 22px;
-      letter-spacing: 1.3px;
+      font-size: $middleFont;
+      line-height: 17px;
+      letter-spacing: 1px;
       text-overflow: ellipsis;
 
       a {

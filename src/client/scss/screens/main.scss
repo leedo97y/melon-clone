@@ -10,7 +10,7 @@
   align-content: flex-start;
   justify-content: center;
   align-items: flex-start;
-  gap: 100px;
+  gap: 80px;
 
   background: $gradientBg;
 
@@ -20,12 +20,12 @@
 // top and playlist
 #top,
 #playlist {
-  margin-top: 110px;
+  margin-top: 80px;
 }
 
 //// top tracks
 #top {
-  width: 500px;
+  width: 400px;
   height: 70%;
 
   box-sizing: border-box;
@@ -36,35 +36,35 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
 
-  // margin-left: 100px;
   margin-bottom: 20px;
   padding: 30px;
+  padding-top: 20px;
 
   border-radius: 5px;
 
   #desc {
-    font-size: 17px;
+    font-size: $middleFont;
     margin-top: 10px;
     letter-spacing: 0.8px;
   }
 
   #descSecond {
-    font-size: 17px;
-    margin-top: -10px;
+    font-size: $middleFont;
+    margin-top: -5px;
     letter-spacing: 0.8px;
   }
 
   #descLast {
-    font-size: 17px;
-    margin-top: -10px;
+    font-size: $middleFont;
+    margin-top: -5px;
     margin-bottom: 30px;
     letter-spacing: 0.8px;
   }
 
   #trackListDiv {
-    width: 420px;
+    width: 380px;
     height: 70%;
 
     overflow: auto;
@@ -92,7 +92,8 @@
   }
 
   p:first-child {
-    font-size: 30px;
+    margin-top: 10px;
+    font-size: $titleFont;
     font-weight: 500;
   }
 }
@@ -104,28 +105,32 @@
   justify-content: center;
   align-items: flex-start;
 
+  width: 90%;
+
   // li style
   li {
-    margin-bottom: 20px;
+    margin-bottom: 5px;
     display: flex;
     flex-direction: row;
     align-items: center;
 
     padding: 10px;
+    padding-left: 30px;
 
     #rank {
       width: 20px;
       height: 20px;
-      font-size: 18px;
+      font-size: $middleFont;
       font-weight: 600;
+      padding-top: 5px;
 
       text-align: center;
     }
 
     img {
-      width: 64px;
-      height: 64px;
-      margin: 0 20px;
+      width: 53px;
+      height: 53px;
+      margin: 0 15px;
     }
 
     #textDiv {
@@ -133,10 +138,14 @@
       flex-direction: column;
 
       #title {
-        font-size: 20px;
+        font-size: $basicFont;
         font-weight: 500;
 
         margin-bottom: 10px;
+      }
+
+      a:last-child {
+        font-size: $smallFont;
       }
     }
   }
@@ -152,14 +161,12 @@
   box-sizing: border-box;
   border-radius: 5px;
 
-  width: 500px;
+  width: 380px;
   height: 70%;
   padding: 30px;
 
   background-color: $whiteBg;
   color: $bg;
-
-  padding-top: 40px;
 }
 
 #playlistBody {
@@ -172,8 +179,8 @@
   box-sizing: border-box;
 
   #musicImg {
-    width: 300px;
-    height: 300px;
+    width: 240px;
+    height: 240px;
 
     border-radius: 5px;
 
@@ -181,19 +188,21 @@
   }
 
   #musicTitle {
-    font-size: 25px;
+    font-size: $bigBasicFont;
+    margin-top: -7px;
   }
 
   #musicArtist {
-    font-size: 20px;
-    margin-top: -10px;
+    font-size: $middleFont;
+    margin-top: -15px;
   }
 
   #slider {
-    width: 330px;
+    width: 280px;
     height: 6px;
     background: #151518;
     border-radius: 10px;
+    margin-top: -7px;
     div {
       width: 2px;
       height: 6px;
@@ -210,18 +219,18 @@
       height: 15px;
       color: #494b4e;
       line-height: 0;
-      font-size: 11pt;
-      margin-top: -7px;
-      margin-left: 20px;
+      font-size: 7pt;
+      margin-top: -9px;
+      margin-left: 27px;
     }
     #endtime {
       width: 50px;
       height: 15px;
       color: #494b4e;
       line-height: 0;
-      font-size: 11pt;
-      margin-top: -7px;
-      margin-left: 247px;
+      font-size: 7pt;
+      margin-top: -9px;
+      margin-left: 213px;
     }
   }
 }
@@ -230,10 +239,10 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 50px;
+  gap: 40px;
 
   box-sizing: border-box;
-  margin-top: -10px;
+  margin-top: -27px;
 
   img {
     width: 30px;
@@ -248,9 +257,15 @@
     height: 35px;
   }
 
+  #play,
+  #pause {
+    width: 28px;
+    height: 28px;
+  }
+
   #mute {
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
   }
 
   .hidden {
@@ -263,6 +278,8 @@
   flex-direction: column;
   align-items: center;
 
+  width: 100%;
+  height: 100px;
   gap: 10px;
 
   box-sizing: border-box;
@@ -273,24 +290,25 @@
 
     box-sizing: border-box;
 
-    width: 400px;
-    height: 120px;
+    width: 100%;
+    height: 70px;
 
-    padding: 10px 20px 20px 20px;
+    padding: 0 20px 20px 20px;
+    margin-top: -5px;
 
     li {
-      margin-bottom: 20px;
+      margin-bottom: 10px;
 
       cursor: pointer;
     }
 
     #songTitle {
-      font-size: 23px;
-      margin-bottom: 10px;
+      font-size: $basicFont;
+      margin-bottom: 5px;
     }
 
     #songArtist {
-      font-size: 20px;
+      font-size: $smallFont;
     }
 
     overflow: auto;
