@@ -29,6 +29,12 @@ function wrapAsync(func) {
   };
 }
 
+/**
+ * 회원가입 페이지에서만 오류가 발생하지 않아,
+ * 이 페이지를 수정하여 로그인 페이지로 만들었다.
+ * 따라서, /register 용 post가 맞음.
+ */
+
 userRouter.post(
   "/register",
   body("email")

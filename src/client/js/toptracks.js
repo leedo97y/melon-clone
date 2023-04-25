@@ -16,10 +16,12 @@ const trackListItaly = document.querySelector("#trackListItaly");
 const trackListFrance = document.querySelector("#trackListFrance");
 const trackListDenmark = document.querySelector("#trackListDenmark");
 
+// 나라별로 차트 구성
 const usChart = async () => {
   await fetch(US_CHART)
     .then((res) => res.json())
     .then((datas) => {
+      // 당연히 for 문으로 돌려도 됨.
       const trackDatas = [
         datas.tracks.track[0],
         datas.tracks.track[1],
@@ -274,6 +276,7 @@ const denmarkChart = async () => {
     .catch((err) => console.error(err));
 };
 
+// 함수들 한번에 모아서 작성
 const getDataForWorldChart = async () => {
   await usChart();
   await canadaChart();

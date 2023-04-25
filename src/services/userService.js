@@ -2,6 +2,10 @@ import { userModel } from "../db/models/userModel";
 // import bcrypt from "bcrypt";
 import jwt from "jsonwebtoken";
 
+/**
+ * 주석 처리 된 부분은 각각 회원가입, 유저정보 페이지 등에 쓰이는 service 코드이다.
+ * 아직은 쓰이고 있지 않기에 주석처리를 해줌.
+ */
 class AppError extends Error {
   constructor(statusCode, message) {
     super();

@@ -3,9 +3,10 @@ import { async } from "regenerator-runtime";
 
 const emailInput = document.querySelector("#email");
 const passwordInput = document.querySelector("#password");
-const nicknameInput = document.querySelector("#nickname");
+// const nicknameInput = document.querySelector("#nickname");
 const submitBtn = document.querySelector("#submitBtn");
 
+// 원래 회원가입 form 이어서 nickname을 입력하도록 되어 있었음.
 const onSubmitForm = async (e) => {
   e.preventDefault();
 
@@ -45,6 +46,7 @@ const onSubmitForm = async (e) => {
     await Api.post("/apis/register", data);
 
     alert("로그인이 완료되었습니다.");
+    // 세션스토리지에 토큰 값으로 쿠키 시크릿 값을 세팅해준다.
     sessionStorage.setItem("token", process.env.COOKIE_SECRET);
     window.location.href = "/";
   } catch (err) {

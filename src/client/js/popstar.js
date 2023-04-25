@@ -22,6 +22,7 @@ const getTopStar = async () => {
       const starDatas = [datas.artists.artist[1], datas.artists.artist[2]];
 
       let count = 1;
+      // initial data is 1
 
       // first star
       starName.innerHTML = "#1 " + "&nbsp;" + firstStarData.name;
@@ -69,8 +70,6 @@ const getTopStar = async () => {
             tagLi.id = "tagLi";
             tagLi.innerHTML = item.name;
             tagUl.append(tagLi);
-
-            // console.log(item.name);
           });
         });
     })

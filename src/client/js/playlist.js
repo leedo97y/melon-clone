@@ -2,6 +2,11 @@ const musicImg = document.querySelector("#musicImg");
 const title = document.querySelector("#musicTitle");
 const artist = document.querySelector("#musicArtist");
 
+/**
+ * main page의 플레이리스트임.
+ * js 코드가 너무 길어져서 가독성을 위해 따로 작성함.
+ */
+
 const musicData = [
   {
     title: "Golden Hour",
@@ -49,6 +54,7 @@ const musicData = [
 
 const audio = new Audio(musicData);
 
+// audio 속성을 지정해줌.
 audio.preload = "auto";
 audio.loop = "false";
 
@@ -75,7 +81,14 @@ function timeUpdate() {
   let playPercent = timelineWidth * (seconds / durationTime);
   playtime.style.width = playPercent + "px";
 
-  // 시작시간이 늘어나게 만들 예정
+  /**
+   * < 숫자 맵핑하는 부분 >
+   *
+   * 1. 총 길이가 9(단위는 초)보다 작을 경우 앞에 0으로 채워줄 것
+   * 2. 1분이 넘어가지 않는 경우 분 단위만 0으로 채우기
+   * 3. 1분이 넘어가면 분 세팅해주고, 분 만큼 뺀 나머지를 다시 맵핑
+   *
+   */
 
   if (durationTime <= 9) {
     endtime.innerHTML = `0:0${durationTime}`;
@@ -91,7 +104,6 @@ function timeUpdate() {
     }
   }
 
-  // 시간표현 부분 하면 됨.
   if (seconds <= 9) {
     starttime.innerHTML = `0:0${seconds}`;
   } else if (seconds >= 10 && seconds <= 59) {

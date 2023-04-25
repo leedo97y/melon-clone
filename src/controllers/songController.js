@@ -19,3 +19,5 @@ export const popstar = async (req, res) => {
 export const kpop = async (req, res) => {
   return res.render("kpop", { pageTitle: "k-pop" });
 };
+
+// 페이지 이름을 바꿔준다.

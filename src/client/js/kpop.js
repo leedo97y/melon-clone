@@ -13,9 +13,9 @@ const getKpopChart = async () => {
     .then((res) => res.json())
     .then((datas) => {
       const kpopDatas = datas.albums.album;
-      // console.log(kpopDatas);
 
       let count = 0;
+      // 순위를 표시하기 위해 사용
 
       kpopDatas.forEach((data) => {
         const musicLi = document.createElement("li");
@@ -74,6 +74,7 @@ const getArtistInfo = async () => {
           const allAlbums = datas.topalbums.album;
 
           let albumCount = 0;
+          // 순위를 보여주기 위해 사용
 
           for (let i = 0; i < 10; i++) {
             const albumLi = document.createElement("li");
@@ -112,6 +113,7 @@ const getArtistInfo = async () => {
     });
 };
 
+// 함수 한번에 모아서 관리
 const getAllAPIs = async () => {
   await getKpopChart();
   await getArtistInfo();

@@ -54,6 +54,10 @@ import("../audios/Blue Flame.mp3");
 import("../audios/no celestial.mp3");
 import("../audios/good parts.mp3");
 
+/**
+ * 크기가 큰 파일들은 import() 형식을 사용해달라는 경고 메세지를 받았고, 사용하니까 에러 사라짐.
+ */
+
 // home chart part
 const API_KEY = process.env.API_KEY;
 
@@ -68,6 +72,7 @@ const getDataForChart = async () => {
       const trackDatas = datas.albums.album;
 
       let count = 0;
+      // 순위를 표시하기 위해 사용함.
 
       trackDatas.forEach((data) => {
         const li = document.createElement("li");

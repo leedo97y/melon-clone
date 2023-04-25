@@ -2,6 +2,7 @@ const musicImg = document.querySelector("#albumImg");
 const title = document.querySelector("#albumTitle");
 const artist = document.querySelector("#albumArtist");
 
+// 플레이리스트의 노래를 담는 부분
 const albumData = [
   {
     title: "Edge of Desire",
@@ -41,6 +42,7 @@ const albumData = [
   },
 ];
 
+// 모든 노래를 담는 부분
 const wholePlaylistData = [
   {
     title: "I AM",
@@ -124,6 +126,7 @@ const starttime = document.getElementById("mystarttime");
 const endtime = document.getElementById("myendtime");
 let duration;
 
+// 미리 innerHTML로 텍스트를 한번 세팅해줌.
 starttime.innerHTML = "0:00";
 endtime.innerHTML = "-:--";
 
@@ -132,16 +135,28 @@ endtime.innerHTML = "-:--";
 // timelineWidth 는 timeline - playtime이며, 재생시간 말고 남은 길이를 뜻함.
 let timelineWidth = timeline.offsetWidth - playtime.offsetWidth;
 
+// 플레이리스트 시간 표시 부분에 관한 함수임.
 function timeUpdate() {
   starttime.innerHTML = "0:00";
   endtime.innerHTML = "0:00";
 
+  // 총 길이 이다. 맨 아래에서 지정해주고 있음.
   let durationTime = Math.floor(duration);
+  // 현재 재생 중 시간이다.
   let seconds = Math.floor(audio.currentTime);
+  // 플레이 바에서 재생이 남은 길이..?에 남은 퍼센트를 곱한 값이다. =  몇 픽셀 씩 이동할지 정해줌.
   let playPercent = timelineWidth * (seconds / durationTime);
   playtime.style.width = playPercent + "px";
 
-  // 시작시간이 늘어나게 만들 예정
+  /**
+   * < 숫자 맵핑하는 부분 >
+   *
+   * 1. 총 길이가 9(단위는 초)보다 작을 경우 앞에 0으로 채워줄 것
+   * 2. 1분이 넘어가지 않는 경우 분 단위만 0으로 채우기
+   * 3. 1분이 넘어가면 분 세팅해주고, 분 만큼 뺀 나머지를 다시 맵핑
+   *
+   */
+
   if (durationTime <= 9) {
     endtime.innerHTML = `0:0${durationTime}`;
   } else if (durationTime >= 10 && durationTime <= 59) {
@@ -172,6 +187,9 @@ function timeUpdate() {
 audio.addEventListener("timeupdate", timeUpdate, false);
 
 let musicIndex = 0;
+// 인덱스를 세팅해준다.
+// const로 세팅해주면 read-only이기 떄문에 재할당이 안된다.
+// 따라서, let으로 해줘야함.
 
 const loadMusic = () => {
   audio.src = albumData[musicIndex].source;
@@ -188,6 +206,19 @@ const mute = document.querySelector("#mute");
 const volume = document.querySelector("#volume");
 
 const hidden = "hidden";
+
+/**
+ * 아래 append를 통해 만들어지는 형식
+ *
+ * <li>
+ *  <img id="plus"/>
+ *  <div id="infoDiv">
+ *    <p id="musicPlayTitle">제목</p>
+ *    <span id="musicPlayArtist">아티스트명</span>
+ *  </div>
+ * </li>
+ *
+ */
 
 const showPlaylist = () => {
   wholePlaylistData.forEach((music) => {
@@ -309,8 +340,9 @@ const showPlaylist = () => {
   });
 };
 
+// 플레이 버튼
 const onPlay = () => {
-  // 끝났을때 다음 곡 재생
+  // 끝났을때 다음 곡 재생 - 우선 안되는 부분 주석처리
   // if (audio.ended) {
   //   musicIndex++;
 
@@ -326,6 +358,7 @@ const onPlay = () => {
   audio.play();
 };
 
+// 일시정지 버튼
 const onPause = () => {
   play.classList.remove(hidden);
   pause.classList.add(hidden);
@@ -333,6 +366,7 @@ const onPause = () => {
   audio.pause();
 };
 
+// 이전 버튼
 const onPrev = () => {
   musicIndex--;
 
@@ -344,6 +378,7 @@ const onPrev = () => {
   onPlay();
 };
 
+// 다음 버튼
 const onNext = () => {
   musicIndex++;
 
@@ -355,6 +390,8 @@ const onNext = () => {
   onPlay();
 };
 
+// 음소거 버튼
+// 음량 조절되게 바꿀 예정
 const onMute = () => {
   mute.classList.add(hidden);
   volume.classList.remove(hidden);
@@ -369,6 +406,8 @@ const onVolume = () => {
   audio.volume = 1;
 };
 
+// 여기서 duration을 지정해주고 있음.
+// 로딩이 된 다음에 duration을 알아야하니까
 audio.addEventListener(
   "canplaythrough",
   function () {
