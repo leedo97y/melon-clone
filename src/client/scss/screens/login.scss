@@ -1,6 +1,7 @@
 #loginDiv {
-  width: 100%;
-  height: 700px;
+  width: 100vw;
+  height: 100vh;
+  background-size: cover;
 
   box-sizing: border-box;
   padding-top: 50px;
@@ -15,7 +16,9 @@
   background: $gradientBg;
 
   #loginFormDiv {
-    height: 700px;
+    margin-top: 110px;
+
+    height: 70%;
     width: 500px;
     padding: 30px;
 

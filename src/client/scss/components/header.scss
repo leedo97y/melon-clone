@@ -1,6 +1,8 @@
 //// header
-
 #headerDiv {
+  position: fixed;
+  top: 0;
+
   width: 100%;
   height: 100px;
 
@@ -39,12 +41,12 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 50px;
+  gap: 35px;
 
   margin-right: 50px;
 
   span {
-    width: 120px;
+    width: 150px;
     height: 30px;
     text-align: center;
 
