@@ -39,7 +39,7 @@ Tomato를 좋아해서 토마토를 모티브로 뮤직 플레이어 사이트�
 
 ## 기능 소개
   
-> ### #0 메인 페이지
+### 메인 페이지
   
 <img width="800" height="500" alt="스크린샷 2023-04-22 오전 4 04 04" src="https://user-images.githubusercontent.com/99410440/234168703-ffa7fb91-2a0e-4ee3-8e0b-2dc69df4838a.png">
 
@@ -55,7 +55,7 @@ Tomato를 좋아해서 토마토를 모티브로 뮤직 플레이어 사이트�
 <br>
 <br>
 
-> ### #1 로그인 페이지
+### 로그인 페이지
 
 <img width="800" height="500" alt="login page" src="https://user-images.githubusercontent.com/99410440/234161306-729dbd33-c489-417a-80a4-0e210567b6cf.png">
 
@@ -82,7 +82,7 @@ pw: 12341234
 <br>
 <br>
   
-> ### #2 my playlist 페이지
+### my playlist 페이지
 
 <img width="800" height="500" alt="myplaylist" src="https://user-images.githubusercontent.com/99410440/234161993-a56a310d-76e0-4708-a9fb-4b4681d11fb1.png">
 
@@ -96,7 +96,7 @@ pw: 12341234
 <br>
 <br>
 
-> ### #3 top tracks 페이지
+### top tracks 페이지
 
 <img width="800" height="500" alt="toptracks_img" src="https://user-images.githubusercontent.com/99410440/234162276-5164a704-c73e-4046-b13e-b9402bba727f.png">
 
@@ -114,7 +114,7 @@ pw: 12341234
 <br>
 <br>
 
-> ### #4 pop star 페이지
+### pop star 페이지
 
 <img width="800" height="500" alt="pop star page" src="https://user-images.githubusercontent.com/99410440/234162750-31269861-c4e8-440d-8113-9b48ea2607c9.png">
 
@@ -129,7 +129,7 @@ pw: 12341234
 <br>
 <br>
 
-> ### #5 k-pop 페이지
+### k-pop 페이지
 
 <img width="800" height="500" alt="kpop star page" src="https://user-images.githubusercontent.com/99410440/234162829-c3015014-31ad-4fb5-a1cd-970e8ba9b7fe.png">
 <br>
